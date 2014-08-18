@@ -1,0 +1,25 @@
+@font-face {
+    font-family: "timeburner_regular";
+    src: url(../font/timeburner_regular.ttf);
+}
+
+#splash{
+    height: 100%;
+	width: 100%;
+    position: absolute;
+    background-image: url(../img/splash.jpg);
+    background-size: cover;
+}
+
+
+#splash h1{
+	font-family: timeburner_regular;
+	text-shadow: none;
+	text-transform: none;
+	color: #fff;  
+	font-size: 7em;  
+	vertical-align: middle;  
+	position: relative;  
+	top: 50%;  
+	margin-top: -73px;
+}
