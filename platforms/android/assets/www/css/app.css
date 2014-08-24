@@ -30,11 +30,13 @@ body{
 
 #items{
     text-align: center;
+    padding-top: 1em;
+    background: #eee;
 }
 
 #items > .item{
-    margin: 1em;
-    background: cyan;
+    margin: 0em 1em 1em 1em;
+    /* background: cyan; */
     height: 250px;
     line-height: 250px;
     position: relative;
