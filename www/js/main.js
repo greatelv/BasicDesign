@@ -20,8 +20,9 @@ var main = (function(){
 			});
 			
 			var item = $(this);
-			elem.items.children('.over').hide();
-			item.children('.over').fadeIn(200);
+			elem.items.children('.over').removeClass('focus');
+			item.children('.over').addClass('focus');
+			
 		});
 		
 		$(document).on('scrollstop', function(){
