@@ -3,6 +3,10 @@
     src: url(../font/timeburner_regular.ttf);
 }
 
+body{
+	text-transform: none;
+}
+
 #splash{
     height: 100%;
 	width: 100%;
@@ -22,4 +26,38 @@
 	position: relative;  
 	top: 50%;  
 	margin-top: -73px;
+}
+
+#items{
+    text-align: center;
+}
+
+#items > .item{
+    margin: 1em;
+    background: cyan;
+    height: 250px;
+    line-height: 250px;
+    position: relative;
+}
+
+#items .over{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.8);
+	display: none;
+}
+
+#items .over .left{
+    height: 100%;
+    width: 50%;
+    display: inline-block;
+    float: left;
+}
+
+#items .over .right{
+    height: 100%;  width: 50%;  display: inline-block;  
+    float: right;
+	
 }
