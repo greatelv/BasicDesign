@@ -37,7 +37,6 @@ var main = (function(){
 				$('#header_menu').addClass('open');
 				disable_scroll(); 
 				isOpenHeaderMenu = true;
-
 			}else{
 				$('#dim').removeClass('show').hide();
 				$('#header_menu').removeClass('open');
