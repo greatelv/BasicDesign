@@ -4,12 +4,15 @@
 }
 
 body{
-	text-transform: none;
+    text-transform: none;
 }
+
+* { padding: 0; margin: 0; border: 0 }
+ul, ol, li { margin: 0; padding: 0; list-style: none  }
 
 #splash{
     height: 100%;
-	width: 100%;
+    width: 100%;
     position: absolute;
     background-image: url(../img/splash.jpg);
     background-size: cover;
@@ -17,15 +20,15 @@ body{
 
 
 #splash h1{
-	font-family: timeburner_regular;
-	text-shadow: none;
-	text-transform: none;
-	color: #fff;  
-	font-size: 7em;  
-	vertical-align: middle;  
-	position: relative;  
-	top: 50%;  
-	margin-top: -73px;
+    font-family: timeburner_regular;
+    text-shadow: none;
+    text-transform: none;
+    color: #fff;  
+    font-size: 7em;  
+    vertical-align: middle;  
+    position: relative;  
+    top: 50%;  
+    margin-top: -73px;
 }
 
 #items{
@@ -46,12 +49,12 @@ body{
 }
 
 #items .over{
-	position: absolute;
-	top: 0px;
-	left: 0px;
-	width: 100%;
-	background-color: rgba(0, 0, 0, 0.8);
-	opacity: 0 ;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0 ;
 
     -webkit-transition: opacity 0.2s ease-in-out;
        -moz-transition: opacity 0.2s ease-in-out;
@@ -74,5 +77,54 @@ body{
 #items .over .right{
     height: 100%;  width: 50%;  display: inline-block;  
     float: right;
-	
+    
+}
+
+#header_menu{
+    position: absolute;
+    top: -212px;
+    width: 100%;
+
+    -webkit-transition: top 0.2s ease-in-out;
+       -moz-transition: top 0.2s ease-in-out;
+        -ms-transition: top 0.2s ease-in-out;
+         -o-transition: top 0.2s ease-in-out;
+            transition: top 0.2s ease-in-out;
+}
+
+#header_menu ul{
+
+}
+
+#header_menu ul li{
+    text-align: right;
+    font-size: 2em;
+    color: #222;
+    background: aliceblue;
+    line-height: 2em;
+}
+
+#header_menu.open{
+    top: 44px;
+}
+
+
+#dim{
+    background-color: #222;
+    opacity: 0;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    display: none;
+
+    -webkit-transition: opacity 0.2s ease-in-out;
+       -moz-transition: opacity 0.2s ease-in-out;
+        -ms-transition: opacity 0.2s ease-in-out;
+         -o-transition: opacity 0.2s ease-in-out;
+            transition: opacity 0.2s ease-in-out;
+}
+
+#dim.show{
+    opacity: 0.7;
 }

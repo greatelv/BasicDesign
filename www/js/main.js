@@ -5,6 +5,7 @@ var main = (function(){
 	}
 	
 	var isTouchMoving = false;
+	var isOpenHeaderMenu = false;
 	
 	
 	var bindHandler = function(){
@@ -27,6 +28,30 @@ var main = (function(){
 		
 		$(document).on('scrollstop', function(){
 			isTouchMoving = false;
+		});
+
+		//헤더 메뉴 드로어 토글 이벤트
+		$('#header_menu_button').on('vclick', function(){
+			if(!isOpenHeaderMenu){
+				$('#dim').show().addClass('show');
+				$('#header_menu').addClass('open');
+				disable_scroll(); 
+				isOpenHeaderMenu = true;
+
+			}else{
+				$('#dim').removeClass('show').hide();
+				$('#header_menu').removeClass('open');
+				enable_scroll();
+				isOpenHeaderMenu = false;
+			}
+		});
+
+		$('#dim').on('vclick', function(){
+			$(this).attr('data-icon', 'arrow-d');
+			$('#dim').removeClass('show').hide();
+			$('#header_menu').removeClass('open');
+			enable_scroll();
+			isOpenHeaderMenu = false;
 		});
 	};
 	
