@@ -81,7 +81,7 @@ ul, ol, li { margin: 0; padding: 0; list-style: none  }
     
 }
 
-#header_menu{
+.header_menu{
     position: fixed;
     top: -212px;
     width: 100%;
@@ -93,11 +93,11 @@ ul, ol, li { margin: 0; padding: 0; list-style: none  }
             transition: top 0.2s ease-in-out;
 }
 
-#header_menu ul{
+.header_menu ul{
 
 }
 
-#header_menu ul li{
+.header_menu ul li{
     text-align: right;
     font-size: 2em;
     color: #222;
@@ -105,12 +105,12 @@ ul, ol, li { margin: 0; padding: 0; list-style: none  }
     line-height: 2em;
 }
 
-#header_menu.open{
+.header_menu.open{
     top: 44px;
 }
 
 
-#dim{
+.dim{
     background-color: #222;
     opacity: 0;
     height: 100%;
@@ -126,6 +126,6 @@ ul, ol, li { margin: 0; padding: 0; list-style: none  }
             transition: opacity 0.2s ease-in-out;
 }
 
-#dim.show{
+.dim.show{
     opacity: 0.7;
 }

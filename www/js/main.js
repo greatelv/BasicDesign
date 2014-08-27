@@ -10,20 +10,16 @@ var main = (function(){
 	
 	var bindHandler = function(){
 		$( "#items .item" ).on("vclick", function(){
-			console.log('isTouchMoving  : '+isTouchMoving);
 			if(isTouchMoving){
 				isTouchMoving = false;
 				return false;
 			}
 
+			location.href="#page_elem";
+
 			$(document).on('vmousemove', function(){
 				isTouchMoving = true;
 			});
-			
-			var item = $(this);
-			elem.items.children('.over').removeClass('focus');
-			item.children('.over').addClass('focus');
-			
 		});
 		
 		$(document).on('scrollstop', function(){
@@ -31,24 +27,24 @@ var main = (function(){
 		});
 
 		//헤더 메뉴 드로어 토글 이벤트
-		$('#header_menu_button').on('vclick', function(){
+		$('.header_menu_button').on('vclick', function(){
 			if(!isOpenHeaderMenu){
-				$('#dim').show().addClass('show');
-				$('#header_menu').addClass('open');
+				$('.dim').show().addClass('show');
+				$('.header_menu').addClass('open');
 				disable_scroll(); 
 				isOpenHeaderMenu = true;
 			}else{
-				$('#dim').removeClass('show').hide();
-				$('#header_menu').removeClass('open');
+				$('.dim').removeClass('show').hide();
+				$('.header_menu').removeClass('open');
 				enable_scroll();
 				isOpenHeaderMenu = false;
 			}
 		});
 
-		$('#dim').on('vclick', function(){
+		$('.dim').on('vclick', function(){
 			$(this).attr('data-icon', 'arrow-d');
-			$('#dim').removeClass('show').hide();
-			$('#header_menu').removeClass('open');
+			$('.dim').removeClass('show').hide();
+			$('.header_menu').removeClass('open');
 			enable_scroll();
 			isOpenHeaderMenu = false;
 		});
@@ -57,6 +53,15 @@ var main = (function(){
 	return {
 		init : function(){
 			bindHandler();
+
+			//Page Manager
+			/*$('#items').pagify({
+		        'pages': ['index', 'element', 'fundamental', 'search', 'self', 'upload'],
+		        'animation': 'fadeIn',
+		        'default' : 'index',
+		        'basePagePath': './page/'
+	    	});*/
+		    
 		}
 	}
 	

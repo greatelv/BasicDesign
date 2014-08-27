@@ -13,64 +13,54 @@
     </head>
     <body>
         <div id="page_main" data-role="page">
-        	<div data-role="header" data-position="fixed" id="header" data-tap-toggle="false">
+        	<div data-role="header" data-position="fixed" class="header" data-tap-toggle="false">
 				<h1>Basic Design</h1>
-				<a href="#" id="header_menu_button" data-icon="arrow-d" class="ui-btn-right">Menu</a>
+				<a href="#" class="header_menu_button ui-btn-right" data-icon="arrow-d">Menu</a>
 			</div>
-			<div id="items">
-				<div class="item ui-btn ui-body-a" data-shadow="true">디자인 요소
-					
-				</div>
-				<div class="item ui-btn ui-body-a">디자인 원리
-					
-				</div>
-				<div class="item ui-btn ui-body-a">디자인 찾기
-					
-				</div>
-				<div class="item ui-btn ui-body-a" >스스로 하기
-					
-				</div>
-				<div class="item ui-btn ui-body-a">사진 올리기
-					
-				</div>
+			<main>
+				<div id="items">
+					<div class="item ui-btn ui-body-a">디자인 요소</div>
+					<div class="item ui-btn ui-body-a"><a href="#fundamental">디자인 원리</a></div>
+					<div class="item ui-btn ui-body-a"><a href="#search">디자인 찾기</a></div>
+					<div class="item ui-btn ui-body-a"><a href="#self">스스로 하기</a></div>
+					<div class="item ui-btn ui-body-a"><a href="#upload">사진 올리기</a></div>
+				</div>	
+			</main>
+			<div class="dim"></div>
+			<div class="header_menu">
+				<ul data-role="listview">
+					<li><a href="#">INTRODUCTION</a></li>
+					<li><a href="#">HOW TO USE</a></li>
+					<li><a href="#">INFORMATION</a></li>
+					<li><a href="#">SETTING</a></li> 
+				</ul>	
 			</div>
 		</div>
-        <div id="page_elem" data-role="page">
-        	<div data-role="header" data-position="fixed" id="header" data-tap-toggle="false">
+		<div id="page_elem" data-role="page">
+        	<div data-role="header" data-position="fixed" class="header" data-tap-toggle="false">
 				<h1>Basic Design</h1>
-				<a href="#" id="header_menu_button" data-icon="arrow-d" class="ui-btn-right">Menu</a>
+				<a href="#" class="header_menu_button ui-btn-right" data-icon="arrow-d">Menu</a>
 			</div>
-			<div class="content">
-				<div class="item ui-btn ui-body-a" data-shadow="true">디자인 요소
-					
-				</div>
-				<div class="item ui-btn ui-body-a">디자인 원리
-					
-				</div>
-				<div class="item ui-btn ui-body-a">디자인 찾기
-					
-				</div>
-				<div class="item ui-btn ui-body-a" >스스로 하기
-					
-				</div>
-				<div class="item ui-btn ui-body-a">사진 올리기
-					
-				</div>
+			<main>
+				<p>help hahaha</p>	
+			</main>
+			<div class="dim"></div>
+			<div class="header_menu">
+				<ul data-role="listview">
+					<li><a href="#">INTRODUCTION</a></li>
+					<li><a href="#">HOW TO USE</a></li>
+					<li><a href="#">INFORMATION</a></li>
+					<li><a href="#">SETTING</a></li> 
+				</ul>	
 			</div>
 		</div>
-		<div id="dim"></div>
-		<div id="header_menu">
-			<ul data-role="listview">
-				<li><a href="#">INTRODUCTION</a></li>
-				<li><a href="#">HOW TO USE</a></li>
-				<li><a href="#">INFORMATION</a></li>
-				<li><a href="#">SETTING</a></li> 
-			</ul>	
-		</div>
+        
+		
     </body>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/ext/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="js/ext/jquery.mobile-1.4.3.js"></script>
+    <script type="text/javascript" src="js/ext/pagify.js"></script>
     <!-- <script type="text/javascript" src="js/loader.js"></script> -->
     <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/event.js"></script>
