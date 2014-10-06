@@ -11,65 +11,49 @@ body{
 ul, ol, li { margin: 0; padding: 0; list-style: none  }
 
 
-header{
+#header{
     width: 100%;
-    height: 156px;
-    background-image: url(/img/header_shape.png);
-    background-position: center;
+    height: 80px;
+    background-image: url(../img/header_shape.png);
+    background-position: bottom;
     background-color: transparent;
     position: fixed;
+    background-size: contain;
     z-index: 1;
+    background-repeat-y: no-repeat;
+    background-repeat-x: repeat;
 }
-header .title{
-    width: 439px;
-    height: 65px;
-    background: url(../img/basic_design.png) no-repeat;
-    position: absolute;
-    top: 34px;
-    left: 40px;
-    cursor: pointer;
+#header .title{
+    background-image: url(../img/basic_design.png);
+    background-size: contain;
+    position: relative;
+    background-repeat: no-repeat;
+    width: 17em;
+    height: 30px;
+    display: inline-block;
+    top: 1.4em;
+    left: 3%;
 }
 
-header .menu-btn{
+#header .menu-btn{
     position: absolute;
-    width: 85px;
-    height: 51px;
+    width: 50px;
+    height: 30px;
     background: url(../img/header_menu.png) no-repeat;
-    top: 40px;
-    right: 30px;
+    background-size: contain;
+    top: 1.4em;
+    right: 5%;
     cursor: pointer;
-}
-
-header .header_menu{
-    position: fixed;
-    top: -212px;
-    width: 100%;
-
-    -webkit-transition: top 0.2s ease-in-out;
-       -moz-transition: top 0.2s ease-in-out;
-        -ms-transition: top 0.2s ease-in-out;
-         -o-transition: top 0.2s ease-in-out;
-            transition: top 0.2s ease-in-out;
-}
-
-header .header_menu ul{}
-
-header .header_menu ul li{
-    text-align: right;
-    font-size: 2em;
-    color: #222;
-    background: aliceblue;
-    line-height: 2em;
-}
-
-header header_menu.open{
-    top: 44px;
 }
 
 .page{
     position: relative;
-    top: 134px;
+    top: 0px;
     /* z-index: -1; */
+    padding-top: 80px;
+    background: url(../img/pink.png) no-repeat;
+    background-size: cover;
+    height: 100%;
 }
 
 #dim{
@@ -90,4 +74,20 @@ header header_menu.open{
 
 #dim.show{
     opacity: 0.7;
+}
+
+
+#menu-ctn{
+    position: absolute;
+
+    top: 67px;
+    background-image: url(../img/header_shape.png);
+    width: 100%;
+    height: 111px;
+    background-size: contain;
+    background-position: bottom;
+}
+
+#menu-ctn li{
+    
 }

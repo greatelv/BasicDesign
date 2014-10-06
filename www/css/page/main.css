@@ -1,4 +1,52 @@
 #page_main
 #page_main main{}
-#page_main #item{}
-#page_main #item .item{}
+#page_main #items{
+    padding: 1em;
+}
+#page_main #items .item{
+    width: 100%;
+    position: relative;
+    height: 95px;  
+    background-repeat: no-repeat;  
+    background-position: center;  
+    background-size: contain;
+    margin-bottom: 1.2em;
+    cursor: pointer;
+}
+
+#page_main #items .item:before{
+	content:'';
+}
+
+#page_main #items .item:after{
+	content: '';
+	position: absolute;
+	width: 180px;
+	height: 50px;
+	top: 1.8em;
+	left: 3.4em;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+#page_main #items .item.right-txt:after{
+    left: inherit;
+	
+    right: 3.4em;
+}
+
+#page_main #items .item[target=elem]{background-image: url(../../img/icon_elem.png);}
+#page_main #items .item[target=elem]:after{background-image: url(../../img/elem_txt.png);}
+
+#page_main #items .item[target=pcl]{background-image: url(../../img/icon_pcl.png);}
+#page_main #items .item[target=pcl]:after{background-image: url(../../img/pcl_txt.png);}
+
+#page_main #items .item[target=photo]{background-image: url(../../img/icon_photo.png);}
+#page_main #items .item[target=photo]:after{background-image: url(../../img/photo_txt.png);}
+
+#page_main #items .item[target=render]{background-image: url(../../img/icon_render.png);}
+#page_main #items .item[target=render]:after{background-image: url(../../img/render_txt.png);}
+
+#page_main #items .item[target=share]{background-image: url(../../img/icon_share.png);margin-bottom: 0;}
+#page_main #items .item[target=share]:after{background-image: url(../../img/share_txt.png);}
