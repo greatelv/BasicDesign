@@ -50,3 +50,6 @@
 
 #page_main #items .item[target=share]{background-image: url(../../img/icon_share.png);margin-bottom: 0;}
 #page_main #items .item[target=share]:after{background-image: url(../../img/share_txt.png);}
+
+
+.ui-loader{ display: none;}

@@ -3,12 +3,25 @@
     src: url(../font/timeburner_regular.ttf);
 }
 
+@font-face {
+    font-family: "nbg";
+    src: url(../font/NanumBarunGothic.eot);
+    src: local(※), url(../font/NanumBarunGothic.woff) format('woff');
+}
+
 body{
     text-transform: none;
+    font-family: "nbg";
 }
 
 * { padding: 0; margin: 0; border: 0 }
 ul, ol, li { margin: 0; padding: 0; list-style: none  }
+a, u {
+    text-decoration: none;
+    border:0;
+    outline:none;
+    color: inherit;
+}
 
 
 #header{
@@ -72,6 +85,16 @@ ul, ol, li { margin: 0; padding: 0; list-style: none  }
             transition: opacity 0.2s ease-in-out;
 }
 
+#layer{
+    position: absolute;
+    opacity: 0;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    display: none;
+}
+
 #dim.show{
     opacity: 0.7;
 }
@@ -91,3 +114,49 @@ ul, ol, li { margin: 0; padding: 0; list-style: none  }
 #menu-ctn li{
     
 }
+
+#menus{
+    position: absolute;
+    display: none;
+    right: 5%;
+    width: 16em;
+    top: 52px;
+    padding: 1em 0em;
+    background: #fff;
+    color: #757575;
+    z-index: 1;
+    -moz-box-shadow: 0 0 5px #888;  -webkit-box-shadow: 0 0 5px#888;  
+    box-shadow: 0 0px 7px #888;
+    /*opacity: 0;*/
+
+/*
+    -webkit-transition: opacity 0.2s ease-in;
+    -moz-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+    -ms-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;*/
+}
+
+#menus.open{
+    /*opacity: 1*/
+}
+
+#menus li{
+    font-size: 1.5em;
+    line-height: 53px;
+    text-align: right;
+    padding-right: 1em;
+}
+
+#menus li.divider{
+    height: 1px;
+    
+    background: #EBEBEB;
+    width: 80%;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+}
+
+#menus li a{}
