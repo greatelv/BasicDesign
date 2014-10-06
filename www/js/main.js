@@ -15,7 +15,7 @@ var main = (function(){
 				return false;
 			}
 
-			location.href="#page_elem";
+			location.href="#page_upload";
 
 			$(document).on('vmousemove', function(){
 				isTouchMoving = true;

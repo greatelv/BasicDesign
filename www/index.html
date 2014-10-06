@@ -4,29 +4,18 @@
         <meta charset="utf-8" />
         <meta name="format-detection" content="telephone=no" />
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="viewport" content="width=720">
         <link rel="stylesheet" type="text/css" href="css/index.css" />
-        <link rel="stylesheet" type="text/css" href="css/ext/jquery.mobile-1.4.3.css" />
-        <link rel="stylesheet" type="text/css" href="css/app.css	" />
+        <!-- <link rel="stylesheet" type="text/css" href="css/ext/jquery.mobile-1.4.3.css" /> -->
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <link rel="stylesheet" type="text/css" href="css/page/main.css" />
         <meta name="msapplication-tap-highlight" content="no" />
         <title>기초디자인</title>
     </head>
     <body>
-        <div id="page_main" data-role="page">
-        	<div data-role="header" data-position="fixed" class="header" data-tap-toggle="false">
-				<h1>Basic Design</h1>
-				<a href="#" class="header_menu_button ui-btn-right" data-icon="arrow-d">Menu</a>
-			</div>
-			<main>
-				<div id="items">
-					<div class="item ui-btn ui-body-a">디자인 요소</div>
-					<div class="item ui-btn ui-body-a"><a href="#fundamental">디자인 원리</a></div>
-					<div class="item ui-btn ui-body-a"><a href="#search">디자인 찾기</a></div>
-					<div class="item ui-btn ui-body-a"><a href="#self">스스로 하기</a></div>
-					<div class="item ui-btn ui-body-a"><a href="#upload">사진 올리기</a></div>
-				</div>	
-			</main>
-			<div class="dim"></div>
+    	<header>
+    		<div class="title"></div>
+			<div class="menu-btn">
 			<div class="header_menu">
 				<ul data-role="listview">
 					<li><a href="#">INTRODUCTION</a></li>
@@ -35,28 +24,19 @@
 					<li><a href="#">SETTING</a></li> 
 				</ul>	
 			</div>
+    	</header>
+        <div id="page_main" data-role="page" class="page">
+    		<div id="items">
+				<div class="item ui-btn ui-body-a">요소</div>
+				<div class="item ui-btn ui-body-a">원리</div>
+				<div class="item ui-btn ui-body-a">찾기</div>
+				<div class="item ui-btn ui-body-a">응용</div>
+				<div class="item ui-btn ui-body-a">올리기</div>
+			</div>	
 		</div>
-		<div id="page_elem" data-role="page">
-        	<div data-role="header" data-position="fixed" class="header" data-tap-toggle="false">
-				<h1>Basic Design</h1>
-				<a href="#" class="header_menu_button ui-btn-right" data-icon="arrow-d">Menu</a>
-			</div>
-			<main>
-				<p>help hahaha</p>	
-			</main>
-			<div class="dim"></div>
-			<div class="header_menu">
-				<ul data-role="listview">
-					<li><a href="#">INTRODUCTION</a></li>
-					<li><a href="#">HOW TO USE</a></li>
-					<li><a href="#">INFORMATION</a></li>
-					<li><a href="#">SETTING</a></li> 
-				</ul>	
-			</div>
-		</div>
-        
+		<div id="dim"></div>
 		
-    </body>
+	</body>
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="js/ext/jquery-1.11.1.js"></script>
     <script type="text/javascript" src="js/ext/jquery.mobile-1.4.3.js"></script>
@@ -68,6 +48,27 @@
     <script type="text/javascript">
     $(function(){
     	app.initialize();
+
+    	$('#file-attachment-form').submit(function () {
+
+            formData = new FormData($(this)[0]);
+
+            $.ajax({
+                type:'POST',
+                url:$('#file-attachment-form').attr('action'),
+                data:formData,
+                contentType: false,
+                processData: false,
+                error:function (jqXHR, textStatus, errorThrown) {
+                    alert('Failed to upload file')
+                },
+                success:function () {
+                    alert('File uploaded')
+                }
+            })
+
+            return false
+        });
     });
     </script>
 </html>

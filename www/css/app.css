@@ -10,78 +10,37 @@ body{
 * { padding: 0; margin: 0; border: 0 }
 ul, ol, li { margin: 0; padding: 0; list-style: none  }
 
-#splash{
-    height: 100%;
+
+header{
     width: 100%;
+    height: 156px;
+    background-image: url(/img/header_shape.png);
+    background-position: center;
+    background-color: transparent;
+    position: fixed;
+    z-index: 1;
+}
+header .title{
+    width: 439px;
+    height: 65px;
+    background: url(../img/basic_design.png) no-repeat;
     position: absolute;
-    background-image: url(../img/splash.jpg);
-    background-size: cover;
+    top: 34px;
+    left: 40px;
+    cursor: pointer;
 }
 
-
-#splash h1{
-    font-family: timeburner_regular;
-    text-shadow: none;
-    text-transform: none;
-    color: #fff;  
-    font-size: 7em;  
-    vertical-align: middle;  
-    position: relative;  
-    top: 50%;  
-    margin-top: -73px;
-}
-
-#items{
-    text-align: center;
-    padding-top: 1em;
-    background: #fff;
-}
-
-#items > .item{
-    margin: 0em 1em 1em 1em;
-    /* background: cyan; */
-    height: 250px;
-    line-height: 250px;
-    position: relative;
-    padding: 0;
-
-    -webkit-box-shadow: 0 10px 6px -6px #777;
-    -moz-box-shadow: 0 10px 6px -6px #777;
-    box-shadow: 8px 8px 8px -7px #777;
-}
-#items .over{
+header .menu-btn{
     position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    opacity: 0 ;
-
-    -webkit-transition: opacity 0.2s ease-in-out;
-       -moz-transition: opacity 0.2s ease-in-out;
-        -ms-transition: opacity 0.2s ease-in-out;
-         -o-transition: opacity 0.2s ease-in-out;
-            transition: opacity 0.2s ease-in-out;
+    width: 85px;
+    height: 51px;
+    background: url(../img/header_menu.png) no-repeat;
+    top: 40px;
+    right: 30px;
+    cursor: pointer;
 }
 
-#items .over.focus{
-    opacity: 1
-}
-
-#items .over .left{
-    height: 100%;
-    width: 50%;
-    display: inline-block;
-    float: left;
-}
-
-#items .over .right{
-    height: 100%;  width: 50%;  display: inline-block;  
-    float: right;
-    
-}
-
-.header_menu{
+header .header_menu{
     position: fixed;
     top: -212px;
     width: 100%;
@@ -93,11 +52,9 @@ ul, ol, li { margin: 0; padding: 0; list-style: none  }
             transition: top 0.2s ease-in-out;
 }
 
-.header_menu ul{
+header .header_menu ul{}
 
-}
-
-.header_menu ul li{
+header .header_menu ul li{
     text-align: right;
     font-size: 2em;
     color: #222;
@@ -105,12 +62,17 @@ ul, ol, li { margin: 0; padding: 0; list-style: none  }
     line-height: 2em;
 }
 
-.header_menu.open{
+header header_menu.open{
     top: 44px;
 }
 
+.page{
+    position: relative;
+    top: 134px;
+    /* z-index: -1; */
+}
 
-.dim{
+#dim{
     background-color: #222;
     opacity: 0;
     height: 100%;
@@ -126,6 +88,6 @@ ul, ol, li { margin: 0; padding: 0; list-style: none  }
             transition: opacity 0.2s ease-in-out;
 }
 
-.dim.show{
+#dim.show{
     opacity: 0.7;
 }
