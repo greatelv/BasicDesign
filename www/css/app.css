@@ -33,9 +33,17 @@ a, u {
     position: fixed;
     background-size: contain;
     z-index: 1;
-    background-repeat-y: no-repeat;
-    background-repeat-x: repeat;
+    background-repeat: no-repeat;
 }
+#header:before{
+    content: ''
+;
+    position: absolute;
+    width: 100%;
+    height: 69px;
+    background-color: #fff;
+}
+
 #header .title{
     background-image: url(../img/basic_design.png);
     background-size: contain;
@@ -45,7 +53,7 @@ a, u {
     height: 30px;
     display: inline-block;
     top: 1.4em;
-    left: 3%;
+    left: 1.2em;
 }
 
 #header .menu-btn{
@@ -55,7 +63,7 @@ a, u {
     background: url(../img/header_menu.png) no-repeat;
     background-size: contain;
     top: 1.4em;
-    right: 5%;
+    right: 1.2em;
     cursor: pointer;
 }
 
@@ -118,7 +126,7 @@ a, u {
 #menus{
     position: absolute;
     display: none;
-    right: 5%;
+    right: 1.2em;
     width: 16em;
     top: 52px;
     padding: 1em 0em;
