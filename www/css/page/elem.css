@@ -48,25 +48,24 @@
 
 /*상세 페이지 가이드*/
 #page_elem_info{
-	background-image: url(../../img/elem/bg.png);
-    
-	height: 597px;
+    background-image: url(../../img/elem/bg.png);
+    height: 597px;
 }
 
 #page_elem_info .title{
-	position: relative;
+    position: relative;
     
-	height: 120px;
+    height: 120px;
     padding: 1.2em;
     
-	/* top: 3em; */
+    /* top: 3em; */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 #page_elem_info .elem_icn{
-	position: relative;
+    position: relative;
     height: 4em;
     padding: 1.2em;  
     top: 1em;
@@ -74,9 +73,9 @@
 }
 
 #page_elem_info .elem_desc{
-	position: relative;  
+    position: relative;  
     
-	height: 20.5em;  
+    height: 20.5em;  
     padding: 1.2em;  
     top: 1em;  
     background-size: contain;  
@@ -86,7 +85,7 @@
 
 #page_elem_info #next{
     position: relative;
-	padding: 1.2em;
+    padding: 1.2em;
     width: 280px;
     left: 0px;
     right: 0px;
@@ -96,63 +95,121 @@
 
 #page_elem_info #next img{
     float: right;
-	
     width: 50px;
+    cursor: pointer;
 }
 
 #page_elem_info[elem=e1] .title{
     background-image: url(../../img/elem/elem_info/e1_title.png);
 }
 #page_elem_info[elem=e2] .title{
-	background-image: url(../../img/elem/elem_info/e2_title.png);
+    background-image: url(../../img/elem/elem_info/e2_title.png);
 }
 #page_elem_info[elem=e3] .title{
-	background-image: url(../../img/elem/elem_info/e3_title.png);
+    background-image: url(../../img/elem/elem_info/e3_title.png);
 }
 #page_elem_info[elem=e4] .title{
-	background-image: url(../../img/elem/elem_info/e4_title.png);
+    background-image: url(../../img/elem/elem_info/e4_title.png);
 }
 #page_elem_info[elem=e5] .title{
-	background-image: url(../../img/elem/elem_info/e5_title.png);
+    background-image: url(../../img/elem/elem_info/e5_title.png);
 }
 #page_elem_info[elem=e6] .title{
-	background-image: url(../../img/elem/elem_info/e6_title.png);
+    background-image: url(../../img/elem/elem_info/e6_title.png);
 }
 
 #page_elem_info[elem=e1] .elem_icn{
-	background-image: url(../../img/elem/icn/e1.png);
+    background-image: url(../../img/elem/icn/e1.png);
 }
 #page_elem_info[elem=e2] .elem_icn{
-	background-image: url(../../img/elem/icn/e2.png);
+    background-image: url(../../img/elem/icn/e2.png);
 }
 #page_elem_info[elem=e3] .elem_icn{
-	background-image: url(../../img/elem/icn/e3.png);
+    background-image: url(../../img/elem/icn/e3.png);
 }
 #page_elem_info[elem=e4] .elem_icn{
-	background-image: url(../../img/elem/icn/e4.png);
+    background-image: url(../../img/elem/icn/e4.png);
 }
 #page_elem_info[elem=e5] .elem_icn{
-	background-image: url(../../img/elem/icn/e5.png);
+    background-image: url(../../img/elem/icn/e5.png);
 }
 #page_elem_info[elem=e6] .elem_icn{
-	background-image: url(../../img/elem/icn/e6.png);
+    background-image: url(../../img/elem/icn/e6.png);
 }
 
 #page_elem_info[elem=e1] .elem_desc{
-	background-image: url(../../img/elem/elem_info/e1_desc.png);
+    background-image: url(../../img/elem/elem_info/e1_desc.png);
 }
 #page_elem_info[elem=e2] .elem_desc{
-	background-image: url(../../img/elem/elem_info/e2_desc.png);
+    background-image: url(../../img/elem/elem_info/e2_desc.png);
 }
 #page_elem_info[elem=e3] .elem_desc{
-	background-image: url(../../img/elem/elem_info/e3_desc.png);
+    background-image: url(../../img/elem/elem_info/e3_desc.png);
 }
 #page_elem_info[elem=e4] .elem_desc{
-	background-image: url(../../img/elem/elem_info/e4_desc.png);
+    background-image: url(../../img/elem/elem_info/e4_desc.png);
 }
 #page_elem_info[elem=e5] .elem_desc{
-	background-image: url(../../img/elem/elem_info/e5_desc.png);
+    background-image: url(../../img/elem/elem_info/e5_desc.png);
 }
 #page_elem_info[elem=e6] .elem_desc{
-	background-image: url(../../img/elem/elem_info/e6_desc.png);
+    background-image: url(../../img/elem/elem_info/e6_desc.png);
+}
+
+
+
+
+
+
+/*요소 실습*/
+#page_elem_practice{
+    background-image: url(../../img/elem/bg.png);
+}
+
+#page_elem_practice .guide{
+    position: relative;
+    padding: 1.2em;
+    top: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#page_elem_practice #canvas{
+    position: relative;    padding: 1.2em;
+    top: 1em;
+}
+
+#page_elem_practice #canvas canvas{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    background: url(../../img/elem/elem_practice/e1/1.png);
+    background-size: contain;  background-repeat: no-repeat;  background-position: center;
+    -moz-box-shadow: 0 0 5px #888;  -webkit-box-shadow: 0 0 5px#888;  box-shadow: 0 0px 7px #888;
+}
+
+#page_elem_practice[elem=e1] .guide{
+    background-image: url(../../img/elem/elem_practice/e1_guide.png);   
+}
+
+#page_elem_practice[elem=e2] .guide{
+    background-image: url(../../img/elem/elem_practice/e2_guide.png);   
+}
+
+#page_elem_practice[elem=e3] .guide{
+    background-image: url(../../img/elem/elem_practice/e3_guide.png);   
+}
+
+#page_elem_practice[elem=e4] .guide{
+    background-image: url(../../img/elem/elem_practice/e4_guide.png);   
+}
+
+#page_elem_practice[elem=e5] .guide{
+    background-image: url(../../img/elem/elem_practice/e5_guide.png);   
+}
+
+#page_elem_practice[elem=e6] .guide{
+    background-image: url(../../img/elem/elem_practice/e6_guide.png);   
 }

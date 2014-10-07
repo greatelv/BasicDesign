@@ -4,9 +4,9 @@
  */
 var page = (function(){
 	
-	var _this = $('#page_elem_info');
+	var _this = $('#page_elem_practice');
 	var	elem = {
-		next : $('#next > img ')
+		canvas : $('#paper	')
 	}
 
 	var elemId = null;
@@ -16,15 +16,15 @@ var page = (function(){
 	
 	
 	var bindHandler = function(){
-		elem.next.on('vclick', function(){
-			 location.href="elem_practice.html?elem="+elemId;
-		})
+		
 	};
 
 	var initPage = function(){
 		elemId = getParameterByName('elem');
-		
 		_this.attr('elem', elemId);
+
+		 elem.canvas.sketch();
+
 	}
 	
 	return {
