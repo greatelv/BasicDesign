@@ -17,10 +17,33 @@
  * under the License.
  */
 var app = {
-    // Application Constructor
-    initialize: function() {
-        document.addEventListener('deviceready', function(){
-        	main.init();
-        }, false);
-    }
+	
+	initialize: function() {
+		document.addEventListener('deviceready', function(){
+			page.init();
+			//헤더 버튼 핸들러
+			$('.menu-btn').on('vclick', function(){
+				if($('#menus').hasClass('open')){
+					$('#menus').fadeOut(100, function(){
+						$(this).removeClass('open')
+						$('#layer').hide();
+					})
+				}else{
+					$('#menus').fadeIn(200, function(){
+						$(this).addClass('open')
+						$('#layer').show();
+					})
+				}
+			})
+
+			$('#layer').on('vclick', function(){
+				if($('#menus').hasClass('open')){
+					$('.menu-btn').trigger('vclick')
+				}
+			})
+
+			$('body').addClass('loaded')
+		
+		}, false);
+	}
 };
