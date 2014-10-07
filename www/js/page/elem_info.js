@@ -1,5 +1,10 @@
+/**
+ * Elem Info
+ * @return {[type]} [description]
+ */
 var page = (function(){
 	
+	var _this = $('#page_elem_info');
 	var	elem = {
 		
 	}
@@ -9,17 +14,17 @@ var page = (function(){
 	
 	
 	var bindHandler = function(){
-		$('#icns li').on('vclick', function(){
-			var target = $(this).attr('class');
-
-			location.href="elem/elem_info.html?elem="+target;
-		});
 	};
+
+	var initPage = function(){
+		var elem = getParameterByName('elem');
+		_this.attr('elem', elem);
+	}
 	
 	return {
 		init : function(){
+			initPage();
 			bindHandler();
-
 		}
 	}
 	
