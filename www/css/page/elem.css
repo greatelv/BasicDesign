@@ -190,6 +190,19 @@
     -moz-box-shadow: 0 0 5px #888;  -webkit-box-shadow: 0 0 5px#888;  box-shadow: 0 0px 7px #888;
 }
 
+#page_elem_practice #canvas #eraser{
+    position: absolute;
+    font-size: 1.2em;
+    width: 285px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    text-align: right;
+    right: 20px;
+    top: 20px;
+    color: #383838;
+}
+
 #page_elem_practice[elem=e1] .guide{
     background-image: url(../../img/elem/elem_practice/e1_guide.png);   
 }

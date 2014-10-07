@@ -11,10 +11,6 @@ var page = (function(){
 
 	var elemId = null;
 	
-	var isTouchMoving = false;
-	var isOpenHeaderMenu = false;
-	
-	
 	var bindHandler = function(){
 		elem.next.on('vclick', function(){
 			 location.href="elem_practice.html?elem="+elemId;
@@ -23,7 +19,6 @@ var page = (function(){
 
 	var initPage = function(){
 		elemId = getParameterByName('elem');
-		
 		_this.attr('elem', elemId);
 	}
 	
