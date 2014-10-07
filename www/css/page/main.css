@@ -2,6 +2,7 @@
 #page_main main{}
 #page_main #items{
     padding: 1.2em;
+        
 }
 #page_main #items .item{
     width: 100%;
@@ -44,7 +45,7 @@
 }
 
 #page_main #items .item.right-txt{
-/*	background-position: left;  */
+/*  background-position: left;  */
 }
 
 #page_main #items .item.right-txt .txt{
@@ -53,15 +54,15 @@
 }
 
 /*#page_main #items .item:after{
-	content: '';
-	position: absolute;
-	width: 180px;
-	height: 50px;
-	top: 1.8em;
-	left: 3.4em;
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 50px;
+    top: 1.8em;
+    left: 3.4em;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 */
 

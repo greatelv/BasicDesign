@@ -1,0 +1,46 @@
+#page_elem{
+    background-image: url(../../img/elem/bg.png);
+    height: 675px;
+}
+
+#page_elem .desc{
+    position: relative;
+    height: 250px;
+    padding: 1.2em;
+    top: 3em;
+    background-image: url(../../img/elem/desc.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#page_elem .touch-guide{
+    position: relative;  
+    height: 0.8em;  
+    padding: 1.2em;  
+    top: 7.3em;  
+    background-image: url(../../img/elem/touch_guide.png);  background-size: contain;  background-repeat: no-repeat;  background-position: center;
+}
+
+#page_elem #icns{
+    position: relative;
+    height: 150px;
+    padding: 1.2em;  
+    top: 8.3em;
+    width: 25em;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    /* line-height: 20px; */
+}
+
+#page_elem #icns li{
+    display: inline-block;
+    margin: 1em 13px;
+    cursor: pointer;
+}
+
+#page_elem #icns li img{
+    width: 6em;
+}
+

@@ -11,7 +11,7 @@ var page = (function(){
 	var bindHandler = function(){
 		$('#items .item').on('vclick', function(){
 			var target = $(this).attr('target');
-			location.href='../page/'+target+'.html';
+			location.href='page/'+target+'.html';
 			
 			/*$.mobile.changePage( '../page/'+target+'.html', { 
 				transition: "slideup", 

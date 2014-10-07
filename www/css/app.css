@@ -135,7 +135,7 @@ a, u {
 }
 
 #menus{
-    position: absolute;
+    position: fixed;
     display: none;
     right: 1.2em;
     width: 16em;
@@ -179,3 +179,5 @@ a, u {
 }
 
 #menus li a{}
+
+.ui-loader{ display: none;}
