@@ -198,9 +198,18 @@
     right: 0px;
     margin: 0 auto;
     text-align: right;
-    right: 20px;
-    top: 20px;
+    right: 10px;
+    top: 21px;
     color: #383838;
+}
+
+#eraser span{
+    background: url(../../img/elem/elem_practice/eraser.png) no-repeat;
+    
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    background-size: contain;
 }
 
 #page_elem_practice[elem=e1] .guide{

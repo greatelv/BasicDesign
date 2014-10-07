@@ -7,7 +7,7 @@ var page = (function(){
 	var _this = $('#page_elem_practice');
 	var	elem = {
 		canvas : $('#paper'),
-		eraser : $('#eraser > a')
+		eraser : $('#eraser > span')
 	}
 
 	var elemId = null;
