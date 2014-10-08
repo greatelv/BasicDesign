@@ -14,6 +14,13 @@ var page = (function(){
 
 			location.href="elem/elem_info.html?elem="+target;
 		});
+
+		$(window).on("navigate", function (event, data) {
+		  var direction = data.state.direction;
+		  if (direction == 'back') {
+		    location.replace('../index.html');
+		  }
+		});
 	};
 	
 	return {

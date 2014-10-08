@@ -162,11 +162,13 @@
 
 
 /*요소 실습*/
-#page_elem_practice{
+#page_elem_practice,
+#page_elem_practice_result{
     background-image: url(../../img/elem/bg.png);
 }
 
-#page_elem_practice .guide{
+#page_elem_practice .guide,
+#page_elem_practice_result .guide{
     position: relative;
     padding: 1.2em;
     top: 1em;
@@ -175,17 +177,19 @@
     background-position: center;
 }
 
-#page_elem_practice #canvas{
-    position: relative;    padding: 1.2em;
+#page_elem_practice #canvas,
+#page_elem_practice_result #canvas{
+    position: relative;    
+    padding: 1.2em;
     top: 1em;
 }
 
-#page_elem_practice #canvas canvas{
+#page_elem_practice #canvas canvas,
+#page_elem_practice_result #canvas #paper{
     position: absolute;
     left: 0px;
     right: 0px;
     margin: 0 auto;
-    background: url(../../img/elem/elem_practice/e1/1.png);
     background-size: contain;  background-repeat: no-repeat;  background-position: center;
     -moz-box-shadow: 0 0 5px #888;  -webkit-box-shadow: 0 0 5px#888;  box-shadow: 0 0px 7px #888;
 }
@@ -212,29 +216,38 @@
     background-size: contain;
 }
 
-#page_elem_practice[elem=e1] .guide{
+#page_elem_practice[elem=e1] .guide,
+#page_elem_practice_result[elem=e1] .guide{
     background-image: url(../../img/elem/elem_practice/e1_guide.png);   
 }
 
-#page_elem_practice[elem=e2] .guide{
+#page_elem_practice[elem=e2] .guide,
+#page_elem_practice_result[elem=e2] .guide{
     background-image: url(../../img/elem/elem_practice/e2_guide.png);   
 }
 
-#page_elem_practice[elem=e3] .guide{
+#page_elem_practice[elem=e3] .guide,
+#page_elem_practice_result[elem=e3] .guide{
     background-image: url(../../img/elem/elem_practice/e3_guide.png);   
 }
 
-#page_elem_practice[elem=e4] .guide{
+#page_elem_practice[elem=e4] .guide,
+#page_elem_practice_result[elem=e4] .guide{
     background-image: url(../../img/elem/elem_practice/e4_guide.png);   
 }
 
-#page_elem_practice[elem=e5] .guide{
+#page_elem_practice[elem=e5] .guide,
+#page_elem_practice_result[elem=e5] .guide{
     background-image: url(../../img/elem/elem_practice/e5_guide.png);   
 }
 
-#page_elem_practice[elem=e6] .guide{
+#page_elem_practice[elem=e6] .guide,
+#page_elem_practice_result[elem=e6] .guide{
     background-image: url(../../img/elem/elem_practice/e6_guide.png);   
 }
+
+#page_elem_practice_result{}
+
 
 #sidebar{
     position: fixed;
@@ -312,3 +325,15 @@
     top: 25px;
     text-align: center;
 }
+
+#sidebar ul li.return:after{
+    content: '다른요소보기';
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-size: 23px;
+    top: 12px;
+    text-align: center;
+}
+
+

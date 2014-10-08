@@ -13,7 +13,7 @@ var page = (function(){
 	
 	var bindHandler = function(){
 		elem.next.on('vclick', function(){
-			 location.href="elem_practice.html?elem="+elemId;
+			 location.replace("elem_practice.html?elem="+elemId);
 		})
 	};
 

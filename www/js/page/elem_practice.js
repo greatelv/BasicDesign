@@ -51,7 +51,7 @@ var page = (function(){
 		});
 
 		elem.sidebar.find('.answer').on('vclick', function(){
-			console.log('현재문제에서의 정답 보기');
+			location.replace("elem_practice_result.html?elem="+elemId+"&picIdx="+picIdx);
 		});
 	};
 
@@ -67,7 +67,7 @@ var page = (function(){
 
 	var chagePic = function(){
 		elem.eraser.trigger('vclick');
-		picIdx = _.sample(_.without(pic[elemId], picIdx));
+		picIdx = _.sample(_.without(pic[elemId], picIdx)) ;
 		elem.canvas.css('background-image', 'url(../../img/elem/elem_practice/'+elemId+'/'+picIdx+'.png)');
 	}
 	
