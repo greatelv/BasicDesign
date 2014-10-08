@@ -251,7 +251,7 @@
 
 #sidebar{
     position: fixed;
-    right: -155px;
+    right: -150px;
     top: 40%; 
     background: #222021;
     opacity: 0.8;
@@ -276,15 +276,19 @@
     background: url(../../img/elem/sidebar_arrow.png) no-repeat;
     height: 100%;
     display: inline-block;
-    width: 10px;
-    background-position: 0px 28px;
+    width: 15px;
+    background-position: 4px 30px;
+    /* margin-left: 0px; */
+    float: left;
+    background-size: contain;
 }
 
 #sidebar ul{
     position: relative;
     height: 100%;
-    width: 155px;
+    width: 153px;
     display: inline-block;
+    float: right;
 }
 
 #sidebar ul li{
@@ -293,7 +297,7 @@
 }
 
 #sidebar ul li.divider{
-    width: 13px;
+    width: 12px;
     background: url(../../img/elem/sidebar_divider.png) no-repeat;
     height: 100%;
     background-size: contain;
