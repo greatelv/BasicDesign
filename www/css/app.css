@@ -9,6 +9,12 @@
     src: local(※), url(../font/NanumBarunGothic.woff) format('woff');
 }
 
+@font-face {
+    font-family: "nt";
+    src: url(../font/NotoSansKR-Regular.woff);
+    src: local(※), url(../font/NotoSansKR-Regular.woff) format('woff');
+}
+
 body{
     text-transform: none;
     font-family: "nbg";

@@ -235,3 +235,80 @@
 #page_elem_practice[elem=e6] .guide{
     background-image: url(../../img/elem/elem_practice/e6_guide.png);   
 }
+
+#sidebar{
+    position: fixed;
+    right: -155px;
+    top: 40%; 
+    background: #222021;
+    opacity: 0.8;
+    width: 14em;
+    height: 100px;
+    cursor: pointer;
+    z-index: 1; 
+
+    transition: right 0.4s ease; 
+    -webkit-transition: right 0.4s ease-in-out;
+       -moz-transition: right 0.4s ease-in-out;
+        -ms-transition: right 0.4s ease-in-out;
+         -o-transition: right 0.4s ease-in-out;
+            transition: right 0.4s ease-in-out;
+}
+
+#sidebar.open{
+    right: 0px;
+}
+
+#sidebar .arrow-btn{
+    background: url(../../img/elem/sidebar_arrow.png) no-repeat;
+    height: 100%;
+    display: inline-block;
+    width: 10px;
+    background-position: 0px 28px;
+}
+
+#sidebar ul{
+    position: relative;
+    height: 100%;
+    width: 155px;
+    display: inline-block;
+}
+
+#sidebar ul li{
+    display: inline-block;
+    position: relative;
+}
+
+#sidebar ul li.divider{
+    width: 13px;
+    background: url(../../img/elem/sidebar_divider.png) no-repeat;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+}
+
+#sidebar ul li.menu{
+    height: 100%;
+    width: 52px;
+    /* top: 0px; */
+}
+
+#sidebar ul li.others:after{
+    content: '다른예제보기';
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-size: 23px;
+    top: 12px;
+    text-align: center;
+}
+
+#sidebar ul li.answer:after{
+    content: '정답보기';
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-size: 23px;
+    top: 25px;
+    text-align: center;
+}

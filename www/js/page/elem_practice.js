@@ -7,7 +7,8 @@ var page = (function(){
 	var _this = $('#page_elem_practice');
 	var	elem = {
 		canvas : $('#paper'),
-		eraser : $('#eraser > span')
+		eraser : $('#eraser > span'),
+		sidebar: $('#sidebar'),
 	}
 
 	var elemId = null;
@@ -22,6 +23,8 @@ var page = (function(){
 		e6 : [1, 2]
 	};
 
+	var picIdx = 1;
+
 	
 	var bindHandler = function(){
 		elem.eraser.on('vclick', function(){
@@ -31,12 +34,41 @@ var page = (function(){
 			
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
    		});
+
+		elem.sidebar.find('.arrow-btn').on('vclick', function(){
+			if(elem.sidebar.hasClass('open')){
+				elem.sidebar.removeClass('open');
+				$('#layer').hide();	
+			}else{
+				elem.sidebar.addClass('open');
+				$('#layer').show();	
+			}
+		});
+
+		elem.sidebar.find('.others').on('vclick', function(){
+			elem.sidebar.find('.arrow-btn').trigger('vclick');
+			chagePic();
+		});
+
+		elem.sidebar.find('.answer').on('vclick', function(){
+			console.log('현재문제에서의 정답 보기');
+		});
 	};
 
 	var initPage = function(){
 		elemId = getParameterByName('elem');
 		_this.attr('elem', elemId);
+
+		//Pic(문제) 랜덤 추출
+		picIdx = _.sample(pic[elemId]);
+		elem.canvas.css('background-image', 'url(../../img/elem/elem_practice/'+elemId+'/'+picIdx+'.png)');
 		skts = 	elem.canvas.sketch();
+	}
+
+	var chagePic = function(){
+		elem.eraser.trigger('vclick');
+		picIdx = _.sample(_.without(pic[elemId], picIdx));
+		elem.canvas.css('background-image', 'url(../../img/elem/elem_practice/'+elemId+'/'+picIdx+'.png)');
 	}
 	
 	return {

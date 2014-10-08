@@ -40,6 +40,11 @@ var app = {
 				if($('#menus').hasClass('open')){
 					$('.menu-btn').trigger('vclick')
 				}
+
+				if($('#sidebar').size() && $('#sidebar').hasClass('open')){
+					$('#sidebar').removeClass('open');
+					$('#layer').hide();	
+				}
 			})
 
 			$('body').addClass('loaded')
