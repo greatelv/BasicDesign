@@ -25,13 +25,14 @@ var page = (function(){
 				});
 
 				function onSuccess(imageData) {
-					alert(imageData);
-					alert(JSON.stringify(imageData));
-
 					navigator.notification.confirm(
-					    '갤러리에 사진이 저장되었습니다. 실습할 사진을 선택하시겠습니까?', // message
-					    function(){
-					    	alert('imageData : '+imageData);
+					    '갤러리에 사진이 저장되었습니다. 촬영한 사진으로 실습을 할까요?', // message
+					    function(buttonIndex){
+					    	if(buttonIndex == 1){
+					    		location.href="page/render.html?img="+imageData;	
+					    	}else{
+					    		return;
+					    	}
 					    },            
 					    '안내',           // title
 					    ['실습','메인으로']     // buttonLabels

@@ -11,6 +11,8 @@ var page = (function(){
 		sidebar: $('#sidebar'),
 	}
 
+	var img = null;
+
 	var elemId = null;
 	var skts = null;
 	
@@ -44,6 +46,32 @@ var page = (function(){
 	};
 
 	var initPage = function(){
+
+		img = getParameterByName('img');
+
+
+		if(img){
+			elem.canvas.css('background-image', 'url('+img+')');
+		}else{
+			console.log('사진을 촬영해야함');
+			navigator.camera.getPicture(function(imageData){
+				
+				elem.canvas.css('background-image', 'url('+imageData+')');
+
+			}, function(){
+				navigator.notification.alert(
+				    '사진을 가져오는데 실패했습니다.',  // message
+				    function(){},         // callback
+				    '안내',            // title
+				    '확인'                  // buttonName
+				);
+			}, { 
+				quality: 100,
+				sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
+				destinationType: Camera.DestinationType.FILE_URI
+			});
+		}
+
 		skts = 	elem.canvas.sketch();
 	};
 
