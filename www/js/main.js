@@ -15,17 +15,40 @@ var page = (function(){
 			if(target == 'photo'){
 
 				navigator.camera.getPicture(onSuccess, onFail, { 
-					quality: 50,
-    				destinationType: Camera.DestinationType.DATA_URL
+					quality: 100,
+    				destinationType: Camera.DestinationType.FILE_URI,
+    				allowEdit : false,
+    				encodingType: Camera.EncodingType.PNG,
+    				saveToPhotoAlbum: true,
+    				targetWidth: 570,
+  					targetHeight: 800
 				});
 
 				function onSuccess(imageData) {
-				    var image = document.getElementById('myImage');
-				    image.src = "data:image/jpeg;base64," + imageData;
+					alert(imageData);
+					alert(JSON.stringify(imageData));
+
+					navigator.notification.confirm(
+					    '갤러리에 사진이 저장되었습니다. 실습할 사진을 선택하시겠습니까?', // message
+					    function(){
+					    	alert('imageData : '+imageData);
+					    },            
+					    '안내',           // title
+					    ['실습','메인으로']     // buttonLabels
+					);
+
+
+				    /*var image = document.getElementById('myImage');
+				    image.src = "data:image/jpeg;base64," + imageData;*/
 				}
 
 				function onFail(message) {
-				    alert('Failed because: ' + message);
+				    navigator.notification.alert(
+					    '사진찍기 기능이 취소되었습니다.',  // message
+					    function(){},         // callback
+					    '안내',            // title
+					    '확인'                  // buttonName
+					);
 				}
 
 				return false;

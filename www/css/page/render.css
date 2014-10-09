@@ -1,0 +1,133 @@
+/*요소 실습*/
+#page_render{
+    background-image: url(../../img/elem/bg.png);
+}
+
+#page_render .guide{
+    position: relative;
+    padding: 1.2em;
+    top: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#page_render #canvas{
+    position: relative;    
+    padding: 1.2em;
+    top: 1em;
+}
+
+#page_render #canvas #paper{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    background-size: contain;  background-repeat: no-repeat;  background-position: center;
+    -moz-box-shadow: 0 0 5px #888;  -webkit-box-shadow: 0 0 5px#888;  box-shadow: 0 0px 7px #888;
+}
+
+#page_render #canvas #eraser{
+    position: absolute;
+    font-size: 1.2em;
+    width: 285px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    text-align: right;
+    right: 10px;
+    top: 21px;
+    color: #383838;
+}
+
+#eraser span{
+    background: url(../../img/elem/elem_practice/eraser.png) no-repeat;
+    
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    background-size: contain;
+    cursor: pointer;
+}
+
+#sidebar{
+    position: fixed;
+    right: -150px;
+    top: 40%; 
+    background: #222021;
+    opacity: 0.8;
+    width: 14em;
+    height: 100px;
+    cursor: pointer;
+    z-index: 1; 
+
+    transition: right 0.4s ease; 
+    -webkit-transition: right 0.4s ease-in-out;
+       -moz-transition: right 0.4s ease-in-out;
+        -ms-transition: right 0.4s ease-in-out;
+         -o-transition: right 0.4s ease-in-out;
+            transition: right 0.4s ease-in-out;
+}
+
+#sidebar.open{
+    right: 0px;
+}
+
+#sidebar .arrow-btn{
+    background: url(../../img/elem/sidebar_arrow.png) no-repeat;
+    height: 100%;
+    display: inline-block;
+    width: 15px;
+    background-position: 4px 30px;
+    /* margin-left: 0px; */
+    float: left;
+    background-size: contain;
+}
+
+#sidebar ul{
+    position: relative;
+    height: 100%;
+    width: 153px;
+    display: inline-block;
+    float: right;
+}
+
+#sidebar ul li{
+    display: inline-block;
+    position: relative;
+}
+
+#sidebar ul li.divider{
+    width: 12px;
+    background: url(../../img/elem/sidebar_divider.png) no-repeat;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+}
+
+#sidebar ul li.menu{
+    height: 100%;
+    width: 52px;
+    /* top: 0px; */
+}
+
+#sidebar ul li.save:after{
+    content: '저장하기';
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-size: 23px;
+    top: 25px;
+    text-align: center;
+}
+
+#sidebar ul li.share:after{
+    content: '공유하기';
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-size: 23px;
+    top: 25px;
+    text-align: center;
+}
+
