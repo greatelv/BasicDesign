@@ -12,9 +12,33 @@ var page = (function(){
 		$('#items .item').on('vclick', function(){
 			var target = $(this).attr('target');
 
-			if(target == 'photo'){
+			if(target != 'photo'){
+			
+				location.href='page/'+target+'.html';
 
-				navigator.camera.getPicture(onSuccess, onFail, { 
+			}else{
+
+				navigator.camera.getPicture( function(imageData) {
+					console.log('onSuccess imageData :'+imageData);
+					navigator.notification.confirm(
+					    '갤러리에 사진이 저장되었습니다. 촬영한 사진으로 실습을 할까요?', // message
+					    function(buttonIndex){
+					    	if(buttonIndex == 1){
+					    		location.href="page/render.html?img="+imageData;	
+					    	}
+					    },            
+					    '안내',           // title
+					    ['실습','취소']     // buttonLabels
+					);
+				}, function(message) {
+					console.log('onFail message :'+message);
+				    navigator.notification.alert(
+					    '사진찍기 기능이 취소되었습니다.',  // message
+					    function(){},         // callback
+					    '안내',            // title
+					    '확인'                  // buttonName
+					);
+				}, { 
 					quality: 100,
     				destinationType: Camera.DestinationType.FILE_URI,
     				allowEdit : false,
@@ -23,49 +47,7 @@ var page = (function(){
     				targetWidth: 570,
   					targetHeight: 800
 				});
-
-				function onSuccess(imageData) {
-					console.log('onSuccess imageData :'+imageData);
-					navigator.notification.confirm(
-					    '갤러리에 사진이 저장되었습니다. 촬영한 사진으로 실습을 할까요?', // message
-					    function(buttonIndex){
-					    	if(buttonIndex == 1){
-					    		location.href="page/render.html?img="+imageData;	
-					    	}else{
-					    		return;
-					    	}
-					    },            
-					    '안내',           // title
-					    ['실습','취소']     // buttonLabels
-					);
-
-
-				    /*var image = document.getElementById('myImage');
-				    image.src = "data:image/jpeg;base64," + imageData;*/
-				}
-
-				function onFail(message) {
-					console.log('onFail message :'+message);
-				    navigator.notification.alert(
-					    '사진찍기 기능이 취소되었습니다.',  // message
-					    function(){},         // callback
-					    '안내',            // title
-					    '확인'                  // buttonName
-					);
-				}
-
-				return false;
 			}
-
-
-			location.href='page/'+target+'.html';
-			
-			/*$.mobile.changePage( '../page/'+target+'.html', { 
-				transition: "slideup", 
-				changeHash: true,
-				pageContainer : '.page',
-				reloadPage  : true
-			});*/
 		})
 	};
 	
