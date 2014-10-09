@@ -28,7 +28,9 @@ var page = (function(){
 	
 	var bindHandler = function(){
 		elem.eraser.on('vclick', function(){
+			skts.sketch().action = null;
 			skts.sketch().actions = [];
+			canvO.clearRect(0, 0, canvs.width, canvs.height);
 			var canvs = $('#paper')[0]
 			var canvO = canvs.getContext('2d');
 			

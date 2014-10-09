@@ -15,14 +15,15 @@ var page = (function(){
 
 	var elemId = null;
 	var skts = null;
+	var canvO = null;
+	var canv = null;
 	
 	var bindHandler = function(){
 		elem.eraser.on('vclick', function(){
+			skts.sketch().action = null;
 			skts.sketch().actions = [];
-			var canvs = $('#paper')[0]
-			var canvO = canvs.getContext('2d');
-			
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
+			initCanvas();
    		});
 
 		elem.sidebar.find('.arrow-btn').on('vclick', function(){
@@ -36,28 +37,28 @@ var page = (function(){
 		});
 
 		elem.sidebar.find('.save').on('vclick', function(){
-			elem.sidebar.find('.arrow-btn').trigger('vclick');
-			chagePic();
+			saveCanvas();
 		});
 
 		elem.sidebar.find('.share').on('vclick', function(){
-			location.replace("elem_practice_result.html?elem="+elemId+"&picIdx="+picIdx);
+			saveCanvas();
+			alert('공유 페이지로 이동');
 		});
 	};
 
-	var initPage = function(){
+	var initCanvas = function(){
+		canvO.fillStyle ="#ffffff";
+		canvO.fillRect(0, 0, canvs.width, canvs.height);
 
-		img = getParameterByName('img');
 
-
+		var base_image = new Image();
+		
 		if(img){
-			elem.canvas.css('background-image', 'url('+img+')');
+			base_image.src = img;
 		}else{
-			console.log('사진을 촬영해야함');
 			navigator.camera.getPicture(function(imageData){
-				
-				elem.canvas.css('background-image', 'url('+imageData+')');
-
+				img = imageData;
+				base_image.src = img;
 			}, function(){
 				navigator.notification.alert(
 				    '사진을 가져오는데 실패했습니다.',  // message
@@ -68,16 +69,52 @@ var page = (function(){
 			}, { 
 				quality: 100,
 				sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
-				destinationType: Camera.DestinationType.FILE_URI
+				destinationType: Camera.DestinationType.FILE_URI,
+				targetWidth: 570,
+  				targetHeight: 800
 			});
 		}
 
+		base_image.onload = function(){
+			canvO.drawImage(this, 10, 10, 265, 380);	
+		}
+		
+	}
+
+	var initPage = function(){
+
+		img = getParameterByName('img');
 		skts = 	elem.canvas.sketch();
+		canvs = $('#paper')[0]
+		canvO = canvs.getContext('2d');
 	};
+
+	var saveCanvas = function(){
+		window.canvas2ImagePlugin.saveImageDataToLibrary(
+	        function(msg){
+	            navigator.notification.alert(
+				    '실습한 결과물이 갤러리에 저장되었습니다.'+msg,  // message
+				    function(){},         // callback
+				    '안내',            // title
+				    '확인'                  // buttonName
+				);
+	        },
+	        function(err){
+	            navigator.notification.alert(
+				    '실습 결과물을 저장중 문제가 발생했습니다.'+err,  // message
+				    function(){},         // callback
+				    '안내',            // title
+				    '확인'                  // buttonName
+				);
+	        },
+	        document.getElementById('paper')
+	    );
+	}
 
 	return {
 		init : function(){
 			initPage();
+			initCanvas();
 			bindHandler();
 		}
 	}

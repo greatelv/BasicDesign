@@ -15,6 +15,10 @@
                         {
                             "xml": "<feature name=\"Notification\"><param name=\"android-package\" value=\"org.apache.cordova.dialogs.Notification\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Canvas2ImagePlugin\"><param name=\"android-package\" value=\"org.devgeeks.Canvas2ImagePlugin.Canvas2ImagePlugin\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -24,7 +28,7 @@
                     "/*": [
                         {
                             "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
-                            "count": 1
+                            "count": 2
                         }
                     ]
                 }
@@ -36,6 +40,9 @@
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "org.apache.cordova.dialogs": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "org.devgeeks.Canvas2ImagePlugin": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },

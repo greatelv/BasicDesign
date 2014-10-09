@@ -25,6 +25,7 @@ var page = (function(){
 				});
 
 				function onSuccess(imageData) {
+					console.log('onSuccess imageData :'+imageData);
 					navigator.notification.confirm(
 					    '갤러리에 사진이 저장되었습니다. 촬영한 사진으로 실습을 할까요?', // message
 					    function(buttonIndex){
@@ -35,7 +36,7 @@ var page = (function(){
 					    	}
 					    },            
 					    '안내',           // title
-					    ['실습','메인으로']     // buttonLabels
+					    ['실습','취소']     // buttonLabels
 					);
 
 
@@ -44,6 +45,7 @@ var page = (function(){
 				}
 
 				function onFail(message) {
+					console.log('onFail message :'+message);
 				    navigator.notification.alert(
 					    '사진찍기 기능이 취소되었습니다.',  // message
 					    function(){},         // callback
