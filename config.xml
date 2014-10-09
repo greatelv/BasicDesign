@@ -4,6 +4,8 @@
     <preference name="SplashScreenDelay" value="4000" />
     <preference name="loglevel" value="DEBUG" />
     <preference name="AndroidLaunchMode" value="singleTop" />
+    <plugin name="Camera" value="org.apache.cordova.CameraLauncher" />
+    
     <feature name="App">
         <param name="android-package" value="org.apache.cordova.App" />
     </feature>
