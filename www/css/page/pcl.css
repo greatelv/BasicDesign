@@ -1,0 +1,320 @@
+#page_pcl{
+    background-image: url(../../img/pcl/bg.png);
+    height: 675px;
+}
+
+#page_pcl .desc{
+    position: relative;
+    height: 250px;
+    padding: 1.2em;
+    top: 3em;
+    background-image: url(../../img/pcl/desc.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#page_pcl .touch-guide{
+    position: relative;  
+    height: 0.8em;  
+    padding: 1.2em;  
+    top: 7.3em;  
+    background-image: url(../../img/pcl/touch_guide.png);  background-size: contain;  background-repeat: no-repeat;  background-position: center;
+}
+
+#page_pcl #icns{
+    position: relative;
+    height: 150px;
+    padding: 1.2em;  
+    top: 8.3em;
+    width: 25.5em;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    /* line-height: 20px; */
+}
+
+#page_pcl #icns li{
+    display: inline-block;
+    margin: 1em 7px;
+    cursor: pointer;
+}
+
+#page_pcl #icns li img{
+    width: 5.0em;
+}
+
+
+
+/*상세 페이지 가이드*/
+#page_pcl_info{
+    background-image: url(../../img/pcl/bg.png);
+    height: 597px;
+}
+
+#page_pcl_info .title{
+    position: relative;
+    
+    height: 120px;
+    padding: 1.2em;
+    
+    /* top: 3em; */
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#page_pcl_info .pcl_icn{
+    position: relative;
+    height: 4em;
+    padding: 1.2em;  
+    top: 1em;
+    background-size: contain;  background-repeat: no-repeat;  background-position: center;
+}
+
+#page_pcl_info .pcl_desc{
+    position: relative;  
+    
+    height: 20.5em;  
+    padding: 1.2em;  
+    top: 1em;  
+    background-size: contain;  
+    background-repeat: no-repeat;  
+    background-position: center;
+}
+
+#page_pcl_info #next{
+    position: relative;
+    padding: 1.2em;
+    width: 280px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    top: 0px;
+}
+
+#page_pcl_info #next img{
+    float: right;
+    width: 50px;
+    cursor: pointer;
+}
+
+#page_pcl_info[pcl=p1] .title{
+    background-image: url(../../img/pcl/pcl_info/p1_title.png);
+}
+#page_pcl_info[pcl=p2] .title{
+    background-image: url(../../img/pcl/pcl_info/p2_title.png);
+}
+#page_pcl_info[pcl=p3] .title{
+    background-image: url(../../img/pcl/pcl_info/p3_title.png);
+}
+#page_pcl_info[pcl=p4] .title{
+    background-image: url(../../img/pcl/pcl_info/p4_title.png);
+}
+#page_pcl_info[pcl=e5] .title{
+    background-image: url(../../img/pcl/pcl_info/e5_title.png);
+}
+#page_pcl_info[pcl=e6] .title{
+    background-image: url(../../img/pcl/pcl_info/e6_title.png);
+}
+
+#page_pcl_info[pcl=p1] .pcl_icn{
+    background-image: url(../../img/pcl/icn/p1.png);
+}
+#page_pcl_info[pcl=p2] .pcl_icn{
+    background-image: url(../../img/pcl/icn/p2.png);
+}
+#page_pcl_info[pcl=p3] .pcl_icn{
+    background-image: url(../../img/pcl/icn/p3.png);
+}
+#page_pcl_info[pcl=p4] .pcl_icn{
+    background-image: url(../../img/pcl/icn/p4.png);
+}
+
+
+#page_pcl_info[pcl=p1] .pcl_desc{
+    background-image: url(../../img/pcl/pcl_info/p1_desc.png);
+}
+#page_pcl_info[pcl=p2] .pcl_desc{
+    background-image: url(../../img/pcl/pcl_info/p2_desc.png);
+}
+#page_pcl_info[pcl=p3] .pcl_desc{
+    background-image: url(../../img/pcl/pcl_info/p3_desc.png);
+}
+#page_pcl_info[pcl=p4] .pcl_desc{
+    background-image: url(../../img/pcl/pcl_info/p4_desc.png);
+}
+
+
+
+
+/*요소 실습*/
+#page_pcl_practice,
+#page_pcl_practice_result{
+    background-image: url(../../img/pcl/bg.png);
+}
+
+#page_pcl_practice .guide,
+#page_pcl_practice_result .guide{
+    position: relative;
+    padding: 1.2em;
+    top: 1em;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#page_pcl_practice #canvas,
+#page_pcl_practice_result #canvas{
+    position: relative;    
+    padding: 1.2em;
+    top: 1em;
+}
+
+#page_pcl_practice #canvas canvas,
+#page_pcl_practice_result #canvas #paper{
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    background-size: contain;  background-repeat: no-repeat;  background-position: center;
+    -moz-box-shadow: 0 0 5px #888;  -webkit-box-shadow: 0 0 5px#888;  box-shadow: 0 0px 7px #888;
+}
+
+#page_pcl_practice #canvas #eraser{
+    position: absolute;
+    font-size: 1.2em;
+    width: 285px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    text-align: right;
+    right: 10px;
+    top: 21px;
+    color: #383838;
+}
+
+#eraser span{
+    background: url(../../img/pcl/pcl_practice/eraser.png) no-repeat;
+    
+    width: 45px;
+    height: 45px;
+    display: inline-block;
+    background-size: contain;
+}
+
+#page_pcl_practice[pcl=p1] .guide,
+#page_pcl_practice_result[pcl=p1] .guide{
+    background-image: url(../../img/pcl/pcl_practice/p1_guide.png);   
+}
+
+#page_pcl_practice[pcl=p2] .guide,
+#page_pcl_practice_result[pcl=p2] .guide{
+    background-image: url(../../img/pcl/pcl_practice/p2_guide.png);   
+}
+
+#page_pcl_practice[pcl=p3] .guide,
+#page_pcl_practice_result[pcl=p3] .guide{
+    background-image: url(../../img/pcl/pcl_practice/p3_guide.png);   
+}
+
+#page_pcl_practice[pcl=p4] .guide,
+#page_pcl_practice_result[pcl=p4] .guide{
+    background-image: url(../../img/pcl/pcl_practice/p4_guide.png);   
+}
+
+#page_pcl_practice_result{}
+
+
+#sidebar{
+    position: fixed;
+    right: -150px;
+    top: 40%; 
+    background: #222021;
+    opacity: 0.8;
+    width: 14em;
+    height: 100px;
+    cursor: pointer;
+    z-index: 1; 
+
+    transition: right 0.4s ease; 
+    -webkit-transition: right 0.4s ease-in-out;
+       -moz-transition: right 0.4s ease-in-out;
+        -ms-transition: right 0.4s ease-in-out;
+         -o-transition: right 0.4s ease-in-out;
+            transition: right 0.4s ease-in-out;
+}
+
+#sidebar.open{
+    right: 0px;
+}
+
+#sidebar .arrow-btn{
+    background: url(../../img/pcl/sidebar_arrow.png) no-repeat;
+    height: 100%;
+    display: inline-block;
+    width: 15px;
+    background-position: 4px 30px;
+    /* margin-left: 0px; */
+    float: left;
+    background-size: contain;
+}
+
+#sidebar ul{
+    position: relative;
+    height: 100%;
+    width: 153px;
+    display: inline-block;
+    float: right;
+}
+
+#sidebar ul li{
+    display: inline-block;
+    position: relative;
+}
+
+#sidebar ul li.divider{
+    width: 12px;
+    background: url(../../img/pcl/sidebar_divider.png) no-repeat;
+    height: 100%;
+    background-size: contain;
+    background-position: center;
+}
+
+#sidebar ul li.menu{
+    height: 100%;
+    width: 52px;
+    /* top: 0px; */
+}
+
+#sidebar ul li.others:after{
+    content: '다른예제보기';
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-size: 23px;
+    top: 12px;
+    text-align: center;
+}
+
+#sidebar ul li.answer:after{
+    content: '정답보기';
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-size: 23px;
+    top: 25px;
+    text-align: center;
+}
+
+#sidebar ul li.return:after{
+    content: '다른원리보기';
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    font-size: 23px;
+    top: 12px;
+    text-align: center;
+}
+
+

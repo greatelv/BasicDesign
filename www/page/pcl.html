@@ -8,7 +8,7 @@
         <link rel="stylesheet" type="text/css" href="../css/index.css" />
         <!-- <link rel="stylesheet" type="text/css" href="css/ext/jquery.mobile-1.4.3.css" /> -->
         <link rel="stylesheet" type="text/css" href="../css/app.css" />
-        <link rel="stylesheet" type="text/css" href="../css/page/elem.css" />
+        <link rel="stylesheet" type="text/css" href="../css/page/pcl.css" />
         <meta name="msapplication-tap-highlight" content="no" />
         <title>기초디자인</title>
     </head>
@@ -29,27 +29,21 @@
             <li><a href="#">애플리케이션 정보</a></li>
         </ul> 
         
-        <div id="page_elem" data-role="page" class="page">
+        <div id="page_pcl" data-role="page" class="page">
     		<div class="desc"></div>
             <div class="touch-guide"></div>
             <ul id="icns">
-                <li class="e1">
-                    <img src="../img/elem/icn/e1.png">
+                <li class="p1">
+                    <img src="../img/pcl/icn/p1.png">
                 </li>
-                <li class="e2">
-                    <img src="../img/elem/icn/e2.png">
+                <li class="p2">
+                    <img src="../img/pcl/icn/p2.png">
                 </li>
-                <li class="e3">
-                    <img src="../img/elem/icn/e3.png">
+                <li class="p3">
+                    <img src="../img/pcl/icn/p3.png">
                 </li>
-                <li class="e4">
-                    <img src="../img/elem/icn/e4.png">
-                </li>
-                <li class="e5">
-                    <img src="../img/elem/icn/e5.png">
-                </li>
-                <li class="e6">
-                    <img src="../img/elem/icn/e6.png">
+                <li class="p4">
+                    <img src="../img/pcl/icn/p4.png">
                 </li>
             </ul>
 		</div>
@@ -67,33 +61,12 @@
     <!-- <script type="text/javascript" src="js/loader.js"></script> -->
     <script type="text/javascript" src="../js/app.js"></script>
     <script type="text/javascript" src="../js/event.js"></script>
-    <script type="text/javascript" src="../js/elem.js"></script>
+    <script type="text/javascript" src="../js/pcl.js"></script>
 
 
     <script type="text/javascript">
     $(function(){
     	app.initialize();
-
-/*    	$('#file-attachment-form').submit(function () {
-
-            formData = new FormData($(this)[0]);
-
-            $.ajax({
-                type:'POST',
-                url:$('#file-attachment-form').attr('action'),
-                data:formData,
-                contentType: false,
-                processData: false,
-                error:function (jqXHR, textStatus, errorThrown) {
-                    alert('Failed to upload file')
-                },
-                success:function () {
-                    alert('File uploaded')
-                }
-            })
-
-            return false
-        });*/
     });
     </script>
 </html>
