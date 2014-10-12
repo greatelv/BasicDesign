@@ -34,23 +34,24 @@
                 <h3>공유하기</h3>
                 <div id="return">목록으로</div>
             </div>
-        	<div class="form">
-        		<ul>
-                    <li>
-                        <label>작성자</label>
-                        <input type="text" name="writer" value="User" id="form_writer"/>
-                    </li>
-        			<li>
-        				<label>설명</label>
-        				<input type="text" name="description" id="form_desc"/>
-        			</li>
-        			<li>
-        				<label>실습사진</label>
-        				<div class="btn upload">사진선택</div>
-                        <div class="photo-info">123124.png</div>
-        			</li>
-        		</ul>
-        	</div>
+            <form>
+            	<div class="form">
+            		<ul>
+                        <li>
+                            <label>작성자</label>
+                            <input type="text" name="writer" value="User" id="form_writer"/>
+                        </li>
+            			<li>
+            				<label>설명</label>
+            				<input type="text" name="desc" id="form_desc"/>
+            			</li>
+                        <li>
+                            <label>실습사진</label>
+                            <input type="file" name="photo" id="file" class="upload" data-role="none"/>
+                            </li>
+            		</ul>
+            	</div>
+            </form>
             <div id="submit" class="btn">사진업로드</div>
         </div>
         <div id="layer"></div>

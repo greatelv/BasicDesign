@@ -2,6 +2,7 @@ var page = (function(){
 	
 	var	elem = {}
 	var img = null;
+	var fileName = '';
 	var isPic = false;
 
 	var bindHandler = function(){
@@ -12,8 +13,12 @@ var page = (function(){
 		$('div.btn.upload').on('vclick', function(){
 			navigator.camera.getPicture(function(imageData){
 				img = imageData;
-				$('.photo-info').text(img.substr(img.lastIndexOf('/')+1)+'.png');
+				fileName = imageData.substr(imageData.lastIndexOf('/')+1)+'.png';
+				$('.photo-info').text(fileName);
 				isPic = true;
+
+				console.log('img : '+img);
+				console.log('fileName : '+fileName);
 			}, function(){
 				navigator.notification.alert(
 				    '사진을 가져오는데 실패했습니다.',  // message
@@ -29,7 +34,7 @@ var page = (function(){
 		})
 
 		$('#submit').on('vclick', function(){
-			if(!$('form_writer').val() || !isPic){
+			if(!$('#form_writer').val() || !$('#file').val()){
 				navigator.notification.alert(
 				    '비워진 필드를 채워주세요.',  // message
 				    function(){},         // callback
@@ -37,11 +42,34 @@ var page = (function(){
 				    '확인'                  // buttonName
 				);
 			}else{
+				ActivityIndicator.show()
+				var formData = new FormData($('form')[0]);
 
-			    var options = new FileUploadOptions();
+				$.ajax({
+			        url : 'http://192.168.0.13:8080/rest/photo',
+			        type: "POST",
+			        data : formData,
+			        cache: false,
+        			dataType: 'json',
+        			processData: false, // Don't process the files
+        			contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+			        success:function(data, textStatus, jqXHR) 
+			        {
+			            
+			        },
+			        error: function(jqXHR, textStatus, errorThrown) 
+			        {
+			            //if fails      
+			        },
+			        complete: function(){
+			        	ActivityIndicator.hide();
+			        }
+			    });
+
+			    /*var options = new FileUploadOptions();
 
 			    options.fileKey="file";
-			    options.fileName=img.substr(img.lastIndexOf('/')+1)+'.png';
+			    options.fileName=fileName;
 			    options.mimeType="text/plain";
 			    options.params = {
 			    	desc : 	 $('form_desc').val || '',
@@ -49,15 +77,13 @@ var page = (function(){
 			    }
 
 			    var ft = new FileTransfer();
-			    ft.upload(img, encodeURI("http://localhost:8080/rest/photo"), function(res){
-				    console.log("Code = " + res.responseCode);
-				    console.log("Response = " + res.response);
-				    console.log("Sent = " + res.bytesSent);
+			    ft.upload(img, encodeURI("http://192.168.0.13:8080/rest/photo"), function(res){
+				    
 				}, function(error){
-					alert("An error has occurred: Code = " + error.code);
-				    console.log("upload error source " + error.source);
-				    console.log("upload error target " + error.target);
-			    }, options);
+					
+			    }, options);*/
+
+
 			}
 		});
 	};
