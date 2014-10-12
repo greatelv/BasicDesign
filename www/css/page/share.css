@@ -1,0 +1,136 @@
+#page_share{}
+
+#page_share .header{
+    padding: 0.5em 1em;
+    height: 30px;
+}
+
+#page_share h3{
+    display: inline-block;
+    float: left;
+    font-size: 1.8em;
+    line-height: 30px;
+}
+
+#page_share #upload{
+    float: right;
+    background-color: #ededed;  border-color: #ddd;  color: #333;  text-shadow: 0 1px 0 #f3f3f3;
+    border-radius: .3125em;
+    width: 8em;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+#page_share .item-ctn{
+    margin-top: 10px;
+}
+
+#page_share .item-ctn ul{
+    width: 345px;
+    height: 100px;
+    background: #eee;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+}
+
+#page_share .item-ctn ul li{
+    width: 115px;
+    height: 161px;
+    background-image: url(../../sample/1.png);
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;
+    background-position: center;
+    box-sizing: border-box;    
+    -moz-box-sizing:border-box;    
+    -webkit-box-sizing:border-box;            
+    border: 1px solid rgb(224, 224, 224);
+    cursor: pointer;
+}
+
+
+/*사진 업로드 이미지*/
+#page_share_upload{}
+
+#page_share_upload .header{
+    padding: 0.5em 1em;
+    height: 30px;
+}
+
+#page_share_upload h3{
+    display: inline-block;
+    float: left;
+    font-size: 1.8em;
+    line-height: 30px;
+}
+
+#page_share_upload #return{
+    float: right;
+    background-color: #ededed;  
+    border-color: #ddd;  
+    color: #333;  
+    text-shadow: 0 1px 0 #f3f3f3;
+    border-radius: .3125em;
+    width: 8em;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+#page_share_upload .form{
+    margin-top: 42px;
+    /* padding: 0 1em 0 1em; */
+    width: 321px;
+    left: 0px;
+    right: 0px;
+    margin: 3em auto 0 auto;
+}
+
+#page_share_upload .form ul{}
+
+#page_share_upload .form ul li{
+    line-height: 40px;
+}
+
+#page_share_upload .form ul li label{
+    float: left;
+    width: 80px;
+    font-size: 1.3em;
+    color: #FFF;
+}
+
+#page_share_upload .form ul li input{
+    height: 30px;
+    width: 240px;
+    text-indent: 1em;
+    border-radius: .3125em;
+}
+
+#page_share_upload .form ul li .upload{
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    line-height: 30px;
+}
+
+#page_share_upload .form ul li .photo-info{
+    display: inline-block;
+    
+    margin-left: 10px;
+    width: 120px;
+}
+
+#page_share_upload #submit{
+    margin: 3em auto 0 auto;
+    padding: 0 1em 0 1em;
+    width: 321px;
+    height: 40px;
+    line-height: 40px;
+}

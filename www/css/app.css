@@ -39,6 +39,15 @@ a, u {
     outline:none;
     color: inherit;
 }
+.btn{
+    background-color: #ededed;  
+    border-color: #ddd;  
+    color: #333;  
+    text-shadow: 0 1px 0 #f3f3f3;
+    border-radius: .3125em;
+    text-align: center;
+    cursor: pointer;
+}
 
 
 #header{
@@ -200,3 +209,4 @@ header.sub #header:before{
 #menus li a{}
 
 .ui-loader{ display: none;}
+
