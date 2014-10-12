@@ -10,7 +10,7 @@ var page = (function(){
 			history.back();
 		})
 
-		$('div.btn.upload').on('vclick', function(){
+/*		$('div.btn.upload').on('vclick', function(){
 			navigator.camera.getPicture(function(imageData){
 				img = imageData;
 				fileName = imageData.substr(imageData.lastIndexOf('/')+1)+'.png';
@@ -31,7 +31,7 @@ var page = (function(){
 				sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
 				destinationType: Camera.DestinationType.FILE_URI,
 			});
-		})
+		})*/
 
 		$('#submit').on('vclick', function(){
 			if(!$('#form_writer').val() || !$('#file').val()){
@@ -46,7 +46,7 @@ var page = (function(){
 				var formData = new FormData($('form')[0]);
 
 				$.ajax({
-			        url : 'http://192.168.0.13:8080/rest/photo',
+			        url : $HOST,
 			        type: "POST",
 			        data : formData,
 			        cache: false,
@@ -55,11 +55,13 @@ var page = (function(){
         			contentType: false, // Set content type to false as jQuery will tell the server its a query string request
 			        success:function(data, textStatus, jqXHR) 
 			        {
-			            
+			         	module.alert('사진이 정상적으로 공유되었습니다.', function(){
+			         		location.replace('../share.html');
+			         	});  
 			        },
 			        error: function(jqXHR, textStatus, errorThrown) 
 			        {
-			            //if fails      
+			            module.alert('사진을 업로드하지 못했습니다.', function(){});     
 			        },
 			        complete: function(){
 			        	ActivityIndicator.hide();

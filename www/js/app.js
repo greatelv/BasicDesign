@@ -52,3 +52,18 @@ var app = {
 		}, false);
 	}
 };
+
+var $HOST = 'http://192.168.0.13:8080/rest/photo';
+
+
+
+var module = {
+	alert : function(txt, callback){
+		navigator.notification.alert(
+		    txt || '',  // message
+		    callback || function(){},         // callback
+		    '알림',            // title
+		    '확인'                  // buttonName
+		);
+	}
+}

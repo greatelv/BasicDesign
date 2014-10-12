@@ -52,7 +52,7 @@ a, u {
 
 #header{
     width: 100%;
-    height: 80px;
+    height: 70px;
     background-image: url(../img/header_shape.png);
     background-position: bottom;
     position: fixed;
@@ -65,7 +65,7 @@ a, u {
 ;
     position: absolute;
     width: 100%;
-    height: 70px;
+    height: 60px;
     background-color: #fff;
 }
 
@@ -77,7 +77,7 @@ a, u {
     width: 17em;
     height: 30px;
     display: inline-block;
-    top: 1.4em;
+    top: 1.2em;
     left: 1.2em;
 }
 
@@ -87,7 +87,7 @@ a, u {
     height: 30px;
     background: url(../img/header_menu.png) no-repeat;
     background-size: contain;
-    top: 1.4em;
+    top: 1.2em;
     right: 1.2em;
     cursor: pointer;
 }
@@ -110,7 +110,7 @@ header.sub #header:before{
     position: relative;
     top: 0px;
     /* z-index: -1; */
-    padding-top: 80px;
+    padding-top: 70px;
     background: url(../img/pink.png) no-repeat;
     background-size: cover;
     height: 100%;
