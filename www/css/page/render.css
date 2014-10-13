@@ -5,8 +5,9 @@
 
 #page_render .guide{
     position: relative;
-    padding: 1.2em;
-    top: 1em;
+    height: 3em;
+    font-size: 1em;
+    line-height: 3em;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -16,7 +17,7 @@
     position: absolute;
     
     
-    font-size: 1.4em;
+    font-size: 1.3em;
     text-align: center;
     width: 100%;
     top: 0px;
@@ -25,8 +26,7 @@
 
 #page_render #canvas{
     position: relative;    
-    padding: 1.2em;
-    top: 1em;
+    top: 1.2em;
 }
 
 #page_render #canvas #paper{
@@ -47,7 +47,7 @@
     margin: 0 auto;
     text-align: right;
     right: 10px;
-    top: 21px;
+    top: 5px;
     color: #383838;
 }
 

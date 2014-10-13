@@ -1,13 +1,11 @@
 #page_elem{
     background-image: url(../../img/elem/bg.png);
-    height: 675px;
 }
 
 #page_elem .desc{
     position: relative;
-    height: 250px;
+    height: 180px;
     padding: 1.2em;
-    top: 3em;
     background-image: url(../../img/elem/desc.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -16,22 +14,18 @@
 
 #page_elem .touch-guide{
     position: relative;  
-    height: 0.8em;  
-    padding: 1.2em;  
-    top: 7.3em;  
+    height: 3em;    
+    top: 1.2em;  
     background-image: url(../../img/elem/touch_guide.png);  background-size: contain;  background-repeat: no-repeat;  background-position: center;
 }
 
 #page_elem #icns{
-    position: relative;
-    height: 150px;
-    padding: 1.2em;  
-    top: 8.3em;
+    position: relative;  
+    top: 1.2em;
     width: 25em;
     left: 0px;
     right: 0px;
     margin: 0 auto;
-    /* line-height: 20px; */
 }
 
 #page_elem #icns li{
@@ -49,16 +43,11 @@
 /*상세 페이지 가이드*/
 #page_elem_info{
     background-image: url(../../img/elem/bg.png);
-    height: 597px;
 }
 
 #page_elem_info .title{
     position: relative;
-    
-    height: 120px;
-    padding: 1.2em;
-    
-    /* top: 3em; */
+    height: 90px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -66,18 +55,16 @@
 
 #page_elem_info .elem_icn{
     position: relative;
-    height: 4em;
-    padding: 1.2em;  
-    top: 1em;
+    height: 4em;  
+    top: 1.2em;
     background-size: contain;  background-repeat: no-repeat;  background-position: center;
 }
 
 #page_elem_info .elem_desc{
     position: relative;  
     
-    height: 20.5em;  
-    padding: 1.2em;  
-    top: 1em;  
+    height: 23em;    
+    top: 1.2em;  
     background-size: contain;  
     background-repeat: no-repeat;  
     background-position: center;
@@ -95,7 +82,7 @@
 
 #page_elem_info #next img{
     float: right;
-    width: 50px;
+    width: 40px;
     cursor: pointer;
 }
 
@@ -170,8 +157,8 @@
 #page_elem_practice .guide,
 #page_elem_practice_result .guide{
     position: relative;
-    padding: 1.2em;
-    top: 1em;
+    height: 3.0em;
+    /* top: 1em; */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -180,8 +167,7 @@
 #page_elem_practice #canvas,
 #page_elem_practice_result #canvas{
     position: relative;    
-    padding: 1.2em;
-    top: 1em;
+    top: 1.2em;
 }
 
 #page_elem_practice #canvas canvas,
@@ -203,7 +189,7 @@
     margin: 0 auto;
     text-align: right;
     right: 10px;
-    top: 21px;
+    top: 5px;
     color: #383838;
 }
 
@@ -214,6 +200,8 @@
     height: 45px;
     display: inline-block;
     background-size: contain;
+    cursor: pointer;
+    cursor: pointer;
 }
 
 #page_elem_practice[elem=e1] .guide,

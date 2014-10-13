@@ -1,13 +1,11 @@
 #page_pcl{
     background-image: url(../../img/pcl/bg.png);
-    height: 675px;
 }
 
 #page_pcl .desc{
     position: relative;
-    height: 250px;
+    height: 180px;
     padding: 1.2em;
-    top: 3em;
     background-image: url(../../img/pcl/desc.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -16,27 +14,23 @@
 
 #page_pcl .touch-guide{
     position: relative;  
-    height: 0.8em;  
-    padding: 1.2em;  
-    top: 7.3em;  
+    height: 3em;    
+    top: 1.2em;  
     background-image: url(../../img/pcl/touch_guide.png);  background-size: contain;  background-repeat: no-repeat;  background-position: center;
 }
 
 #page_pcl #icns{
-    position: relative;
-    height: 150px;
-    padding: 1.2em;  
-    top: 8.3em;
-    width: 25.5em;
+    position: relative;  
+    top: 1.2em;
+    width: 25em;
     left: 0px;
     right: 0px;
     margin: 0 auto;
-    /* line-height: 20px; */
 }
 
 #page_pcl #icns li{
     display: inline-block;
-    margin: 1em 7px;
+    margin: 1em 6px;
     cursor: pointer;
 }
 
@@ -49,16 +43,11 @@
 /*상세 페이지 가이드*/
 #page_pcl_info{
     background-image: url(../../img/pcl/bg.png);
-    height: 597px;
 }
 
 #page_pcl_info .title{
     position: relative;
-    
-    height: 120px;
-    padding: 1.2em;
-    
-    /* top: 3em; */
+    height: 90px;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -66,18 +55,16 @@
 
 #page_pcl_info .pcl_icn{
     position: relative;
-    height: 4em;
-    padding: 1.2em;  
-    top: 1em;
+    height: 4em;  
+    top: 1.2em;
     background-size: contain;  background-repeat: no-repeat;  background-position: center;
 }
 
 #page_pcl_info .pcl_desc{
     position: relative;  
     
-    height: 20.5em;  
-    padding: 1.2em;  
-    top: 1em;  
+    height: 23em;    
+    top: 1.2em;  
     background-size: contain;  
     background-repeat: no-repeat;  
     background-position: center;
@@ -95,7 +82,7 @@
 
 #page_pcl_info #next img{
     float: right;
-    width: 50px;
+    width: 40px;
     cursor: pointer;
 }
 
@@ -157,8 +144,8 @@
 #page_pcl_practice .guide,
 #page_pcl_practice_result .guide{
     position: relative;
-    padding: 1.2em;
-    top: 1em;
+    height: 3.0em;
+    /* top: 1em; */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -167,8 +154,7 @@
 #page_pcl_practice #canvas,
 #page_pcl_practice_result #canvas{
     position: relative;    
-    padding: 1.2em;
-    top: 1em;
+    top: 1.2em;
 }
 
 #page_pcl_practice #canvas canvas,
@@ -190,7 +176,7 @@
     margin: 0 auto;
     text-align: right;
     right: 10px;
-    top: 21px;
+    top: 5px;
     color: #383838;
 }
 
