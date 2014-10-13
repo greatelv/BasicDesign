@@ -70,7 +70,7 @@ var module = {
 		    '확인'                  // buttonName
 		);
 	},
-	request : function(url, method, param, callback){
+	request : function(url, method, param, callback, headers){
 		window.ActivityIndicator && ActivityIndicator.show();
 
 		$.ajax({
@@ -78,6 +78,7 @@ var module = {
 	        type: method,
 	        data : param,
 	        cache: false,
+	        headers: headers || {},
 			dataType: 'json',
 			processData: false, // Don't process the files
 			contentType: false, // Set content type to false as jQuery will tell the server its a query string request

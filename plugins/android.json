@@ -31,6 +31,10 @@
                         {
                             "xml": "<feature name=\"ActivityIndicator\"><param name=\"android-package\" value=\"org.apache.cordova.plugin.ActivityIndicator\" /></feature>",
                             "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
                         }
                     ]
                 }
@@ -61,6 +65,9 @@
             "PACKAGE_NAME": "io.cordova.hellocordova"
         },
         "org.apache.cordova.plugin.ActivityIndicator": {
+            "PACKAGE_NAME": "io.cordova.hellocordova"
+        },
+        "org.apache.cordova.device": {
             "PACKAGE_NAME": "io.cordova.hellocordova"
         }
     },

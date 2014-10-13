@@ -186,7 +186,7 @@ h3{
     width: 100%;
     margin-bottom: 0.48em;
     border-bottom: 1px solid #DDDDDD;
-    padding: 3px 0;
+    padding: 5px 0;
 }
 
 #page_share_view .comment ul li:last-child{
@@ -195,8 +195,9 @@ h3{
 
 #page_share_view .comment ul li .writer{
     display: inline-block;
-    margin-left: 0.5em;
+    margin-left: 0.8em;
     font-weight: bolder;
+    color: #555;
 }
 
 #page_share_view .comment ul li .date{

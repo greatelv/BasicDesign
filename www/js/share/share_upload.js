@@ -4,6 +4,10 @@ var page = (function(){
 	var img = null;
 	var fileName = '';
 
+	var initPage = function(){
+		$('#form_writer').val(window.device.model);
+	};
+
 	var bindHandler = function(){
 		$('#return').on('click', function(){
 			history.back();
@@ -32,7 +36,7 @@ var page = (function(){
 	
 	return {
 		init : function(){
-
+			initPage();
 			bindHandler();
 
 		}	

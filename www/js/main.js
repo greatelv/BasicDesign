@@ -53,9 +53,7 @@ var page = (function(){
 	
 	return {
 		init : function(){
-
 			bindHandler();
-
 		}	
 	}
 	
