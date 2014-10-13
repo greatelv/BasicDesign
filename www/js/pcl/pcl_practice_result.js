@@ -15,7 +15,7 @@ var page = (function(){
 
 	
 	var bindHandler = function(){
-		pcl.sidebar.find('.arrow-btn').on('vclick', function(){
+		pcl.sidebar.find('.arrow-btn').on('click', function(){
 			if(pcl.sidebar.hasClass('open')){
 				pcl.sidebar.removeClass('open');
 				$('#layer').hide();	
@@ -25,12 +25,12 @@ var page = (function(){
 			}
 		});
 
-		pcl.sidebar.find('.others').on('vclick', function(){
+		pcl.sidebar.find('.others').on('click', function(){
 			location.replace('pcl_practice.html?pcl='+pclId);
 			return false;
 		});
 
-		pcl.sidebar.find('.return').on('vclick', function(){
+		pcl.sidebar.find('.return').on('click', function(){
 			location.replace('../pcl.html');
 		});
 	};

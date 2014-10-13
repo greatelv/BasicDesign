@@ -22,7 +22,7 @@ var app = {
 		document.addEventListener('deviceready', function(){
 			page.init();
 			//헤더 버튼 핸들러
-			$('.menu-btn').on('vclick', function(){
+			$('.menu-btn').on('click', function(){
 				if($('#menus').hasClass('open')){
 					$('#menus').fadeOut(100, function(){
 						$(this).removeClass('open')
@@ -36,9 +36,9 @@ var app = {
 				}
 			})
 
-			$('#layer').on('vclick', function(){
+			$('#layer').on('click', function(){
 				if($('#menus').hasClass('open')){
-					$('.menu-btn').trigger('vclick')
+					$('.menu-btn').trigger('click')
 				}
 
 				if($('#sidebar').size() && $('#sidebar').hasClass('open')){
@@ -46,6 +46,10 @@ var app = {
 					$('#layer').hide();	
 				}
 			})
+
+			$('#header .title').on('click', function(){
+				location.replace('/index.html');
+			});
 
 			$('body').addClass('loaded')
 		

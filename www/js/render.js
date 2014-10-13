@@ -19,14 +19,14 @@ var page = (function(){
 	var canv = null;
 	
 	var bindHandler = function(){
-		elem.eraser.on('vclick', function(){
+		elem.eraser.on('click', function(){
 			skts.sketch().action = null;
 			skts.sketch().actions = [];
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
 			initCanvas();
    		});
 
-		elem.sidebar.find('.arrow-btn').on('vclick', function(){
+		elem.sidebar.find('.arrow-btn').on('click', function(){
 			if(elem.sidebar.hasClass('open')){
 				elem.sidebar.removeClass('open');
 				$('#layer').hide();	
@@ -36,11 +36,11 @@ var page = (function(){
 			}
 		});
 
-		elem.sidebar.find('.save').on('vclick', function(){
+		elem.sidebar.find('.save').on('click', function(){
 			saveCanvas();
 		});
 
-		elem.sidebar.find('.share').on('vclick', function(){
+		elem.sidebar.find('.share').on('click', function(){
 			saveCanvas();
 			alert('공유 페이지로 이동');
 		});

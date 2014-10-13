@@ -5,7 +5,7 @@ var page = (function(){
 	}
 	
 	var bindHandler = function(){
-		$('#icns li').on('vclick', function(){
+		$('#icns li').on('click', function(){
 			var target = $(this).attr('class');
 
 			location.href="pcl/pcl_info.html?pcl="+target;

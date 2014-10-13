@@ -1,7 +1,6 @@
 #page_share{}
 
 #page_share .header{
-    padding: 0.5em 1em;
     height: 30px;
 }
 
@@ -25,20 +24,17 @@
 }
 
 #page_share .item-ctn{
-    margin-top: 10px;
+    margin-top: 1.2em;
 }
 
 #page_share .item-ctn ul{
-    width: 345px;
-    /* height: 100px; */
-    left: 0px;
-    right: 0px;
-    margin: 0 auto;
+    display: inline-block;
+    width: 100%;
 }
 
 #page_share .item-ctn ul li{
-    width: 113px;
-    height: 159px;
+    height: 150px;
+    width: 33.3%;
     background-image: url(../../sample/1.png);
     position: relative;
     background-repeat: no-repeat;
@@ -50,72 +46,79 @@
     -webkit-box-sizing:border-box;            
     /* border: 1px solid rgb(255, 255, 255); */
     cursor: pointer;
-    margin: 1px 1px;
+    /* margin: 2px; */
+    text-align: center;
 }
+
+/*#page_share .item-ctn ul li img{
+    width: 100%;
+}*/
 
 
 /*사진 업로드 이미지*/
 #page_share_upload{}
 
 #page_share_upload .header{
-    padding: 0.5em 1em;
     height: 30px;
 }
 
 #page_share_upload h3{
     display: inline-block;
     float: left;
-    font-size: 1.8em;
+    font-size: 1.6em;
     line-height: 30px;
+    text-indent: 2px;
 }
 
 #page_share_upload #return{
     float: right;
-    background-color: #ededed;  
-    border-color: #ddd;  
-    color: #333;  
-    text-shadow: 0 1px 0 #f3f3f3;
+    background-color: #ededed;  border-color: #ddd;  color: #333;  text-shadow: 0 1px 0 #f3f3f3;
     border-radius: .3125em;
     width: 8em;
     height: 30px;
     text-align: center;
     line-height: 30px;
-    font-size: 1em;
+    font-size: 1.2em;
     cursor: pointer;
+    margin-right: 2px;
+}
+
+#page_share_upload form{
 }
 
 #page_share_upload .form{
-    margin-top: 42px;
     /* padding: 0 1em 0 1em; */
-    width: 321px;
     left: 0px;
     right: 0px;
-    margin: 3em auto 0 auto;
+    margin: 0 auto;
+    position: relative;
+    top: 3em;
 }
 
 #page_share_upload .form ul{}
 
 #page_share_upload .form ul li{
-    line-height: 40px;
+    line-height: 50px;
 }
 
 #page_share_upload .form ul li label{
     float: left;
-    width: 80px;
+    width: 25%;
     font-size: 1.3em;
     color: #FFF;
+    text-indent: 2px;
 }
 
 #page_share_upload .form ul li input{
     height: 30px;
-    width: 240px;
+    width: 75%;
     text-indent: 1em;
     border-radius: .3125em;
 }
 
 #page_share_upload .form ul li .upload{
     display: inline-block;
-    width: 240px;
+    width: 75%;
     height: 30px;
     line-height: 0px;
     text-indent: 0px;
@@ -129,9 +132,10 @@
 }
 
 #page_share_upload #submit{
-    margin: 3em auto 0 auto;
-    padding: 0 1em 0 1em;
+    margin: 0 auto;
     width: 300px;
     height: 40px;
     line-height: 40px;
+    position: relative;
+    top: 6em;
 }

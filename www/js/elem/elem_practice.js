@@ -27,7 +27,7 @@ var page = (function(){
 
 	
 	var bindHandler = function(){
-		elem.eraser.on('vclick', function(){
+		elem.eraser.on('click', function(){
 			skts.sketch().action = null;
 			skts.sketch().actions = [];
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
@@ -37,7 +37,7 @@ var page = (function(){
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
    		});
 
-		elem.sidebar.find('.arrow-btn').on('vclick', function(){
+		elem.sidebar.find('.arrow-btn').on('click', function(){
 			if(elem.sidebar.hasClass('open')){
 				elem.sidebar.removeClass('open');
 				$('#layer').hide();	
@@ -47,12 +47,12 @@ var page = (function(){
 			}
 		});
 
-		elem.sidebar.find('.others').on('vclick', function(){
-			elem.sidebar.find('.arrow-btn').trigger('vclick');
+		elem.sidebar.find('.others').on('click', function(){
+			elem.sidebar.find('.arrow-btn').trigger('click');
 			chagePic();
 		});
 
-		elem.sidebar.find('.answer').on('vclick', function(){
+		elem.sidebar.find('.answer').on('click', function(){
 			location.replace("elem_practice_result.html?elem="+elemId+"&picIdx="+picIdx);
 		});
 	};
@@ -68,7 +68,7 @@ var page = (function(){
 	}
 
 	var chagePic = function(){
-		elem.eraser.trigger('vclick');
+		elem.eraser.trigger('click');
 		picIdx = _.sample(_.without(pic[elemId], picIdx)) ;
 		elem.canvas.css('background-image', 'url(../../img/elem/elem_practice/'+elemId+'/'+picIdx+'.png)');
 	}

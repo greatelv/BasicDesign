@@ -5,11 +5,11 @@ var page = (function(){
 	var fileName = '';
 
 	var bindHandler = function(){
-		$('#return').on('vclick', function(){
+		$('#return').on('click', function(){
 			history.back();
 		})
 
-		$('#submit').on('vclick', function(){
+		$('#submit').on('click', function(){
 			if(!$('#form_writer').val() || !$('#file').val()){
 				navigator.notification.alert(
 				    '비워진 필드를 채워주세요.',  // message
@@ -18,7 +18,7 @@ var page = (function(){
 				    '확인'                  // buttonName
 				);
 			}else{
-				//ctivityIndicator.show()
+				ActivityIndicator.show()
 				var formData = new FormData($('form')[0]);
 
 				$.ajax({
@@ -40,7 +40,7 @@ var page = (function(){
 			            module.alert('사진을 업로드하지 못했습니다.', function(){});     
 			        },
 			        complete: function(){
-			        	//ActivityIndicator.hide();
+			        	ActivityIndicator.hide();
 			        }
 			    });
 			}

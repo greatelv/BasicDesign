@@ -14,7 +14,7 @@
     </head>
     <body>
     	<header>
-            <div id="header">
+            <div id="header" class="sub">
                 <div class="title"></div>
                 <div class="menu-btn"></div>
                 <div class="header_menu"></div>
@@ -30,29 +30,31 @@
         </ul> 
         
         <div id="page_share_upload" data-role="page" class="page">
-            <div class="header">
-                <h3>공유하기</h3>
-                <div id="return">목록으로</div>
-            </div>
-            <form>
-            	<div class="form">
-            		<ul>
-                        <li>
-                            <label>작성자</label>
-                            <input type="text" name="writer" value="User" id="form_writer"/>
-                        </li>
-            			<li>
-            				<label>설명</label>
-            				<input type="text" name="desc" id="form_desc"/>
-            			</li>
-                        <li>
-                            <label>실습사진</label>
-                            <input type="file" name="photo" id="file" class="upload" data-role="none"/>
+            <div>
+                <div class="header">
+                    <h3>공유하기</h3>
+                    <div id="return">목록으로</div>
+                </div>
+                <form>
+                	<div class="form">
+                		<ul>
+                            <li>
+                                <label>작성자</label>
+                                <input type="text" name="writer" value="User" id="form_writer" data-role="none"/>
                             </li>
-            		</ul>
-            	</div>
-            </form>
-            <div id="submit" class="btn">사진업로드</div>
+                			<li>
+                				<label>설명</label>
+                				<input type="text" name="desc" id="form_desc" data-role="none"/>
+                			</li>
+                            <li>
+                                <label>실습사진</label>
+                                <input type="file" name="photo" id="file" class="upload" data-role="none"/>
+                            </li>
+                		</ul>
+                	</div>
+                </form>
+                <div id="submit" class="btn">사진업로드</div>
+            </div>
         </div>
         <div id="layer"></div>
 		<div id="dim"></div>
@@ -63,7 +65,7 @@
     <script type="text/javascript" src="../../cordova.js"></script>
 
     <script type="text/javascript" src="../../js/ext/jquery-1.11.1.js"></script>
-    <script type="text/javascript" src="../../js/ext/jquery.mobile-1.4.3.js"></script>    
+    <!--<script type="text/javascript" src="../../js/ext/jquery.mobile-1.4.3.js"></script>-->
     <script type="text/javascript" src="../../js/ext/pagify.js"></script>
     <!-- <script type="text/javascript" src="js/loader.js"></script> -->
     <script type="text/javascript" src="../../js/app.js"></script>

@@ -9,7 +9,7 @@ var page = (function(){
 	
 	
 	var bindHandler = function(){
-		$('#icns li').on('vclick', function(){
+		$('#icns li').on('click', function(){
 			var target = $(this).attr('class');
 
 			location.href="elem/elem_info.html?elem="+target;

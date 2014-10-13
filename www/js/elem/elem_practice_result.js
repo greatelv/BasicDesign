@@ -15,7 +15,7 @@ var page = (function(){
 
 	
 	var bindHandler = function(){
-		elem.sidebar.find('.arrow-btn').on('vclick', function(){
+		elem.sidebar.find('.arrow-btn').on('click', function(){
 			if(elem.sidebar.hasClass('open')){
 				elem.sidebar.removeClass('open');
 				$('#layer').hide();	
@@ -25,12 +25,12 @@ var page = (function(){
 			}
 		});
 
-		elem.sidebar.find('.others').on('vclick', function(){
+		elem.sidebar.find('.others').on('click', function(){
 			location.replace('elem_practice.html?elem='+elemId);
 			return false;
 		});
 
-		elem.sidebar.find('.return').on('vclick', function(){
+		elem.sidebar.find('.return').on('click', function(){
 			location.replace('../elem.html');
 		});
 	};

@@ -9,7 +9,7 @@ var page = (function(){
 	
 	
 	var bindHandler = function(){
-		$('#items .item').on('vclick', function(){
+		$('#items .item').on('click', function(){
 			var target = $(this).attr('target');
 
 			if(target != 'photo'){

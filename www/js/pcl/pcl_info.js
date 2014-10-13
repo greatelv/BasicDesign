@@ -12,7 +12,7 @@ var page = (function(){
 	var pclId = null;
 	
 	var bindHandler = function(){
-		pcl.next.on('vclick', function(){
+		pcl.next.on('click', function(){
 			 location.replace("pcl_practice.html?pcl="+pclId);
 		})
 	};

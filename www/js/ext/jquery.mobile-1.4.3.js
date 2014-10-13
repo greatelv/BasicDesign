@@ -3288,13 +3288,13 @@ if ( !$.support.boxShadow ) {
 // on the same element for different events.
 //
 // The current version exposes the following virtual events to jQuery bind methods:
-// "vmouseover vmousedown vmousemove vmouseup vclick vmouseout vmousecancel"
+// "vmouseover vmousedown vmousemove vmouseup click vmouseout vmousecancel"
 
 (function( $, window, document, undefined ) {
 
 var dataPropertyName = "virtualMouseBindings",
 	touchTargetPropertyName = "virtualTouchID",
-	virtualEventNames = "vmouseover vmousedown vmousemove vmouseup vclick vmouseout vmousecancel".split( " " ),
+	virtualEventNames = "vmouseover vmousedown vmousemove vmouseup click vmouseout vmousecancel".split( " " ),
 	touchEventProps = "clientX clientY pageX pageY screenX screenY".split( " " ),
 	mouseHookProps = $.event.mouseHooks ? $.event.mouseHooks.props : [],
 	mouseEventProps = $.event.props.concat( mouseHookProps ),
@@ -3559,7 +3559,7 @@ function handleTouchEnd( event ) {
 	triggerVirtualEvent( "vmouseup", event, flags );
 
 	if ( !didScroll ) {
-		ve = triggerVirtualEvent( "vclick", event, flags );
+		ve = triggerVirtualEvent( "click", event, flags );
 		if ( ve && ve.isDefaultPrevented() ) {
 			// The target of the mouse events that follow the touchend
 			// event don't necessarily match the target used during the
@@ -3730,12 +3730,12 @@ if ( eventCaptureSupported ) {
 
 			// The idea here is to run through the clickBlockList to see if
 			// the current click event is in the proximity of one of our
-			// vclick events that had preventDefault() called on it. If we find
+			// click events that had preventDefault() called on it. If we find
 			// one, then we block the click.
 			//
 			// Why do we have to rely on proximity?
 			//
-			// Because the target of the touch event that triggered the vclick
+			// Because the target of the touch event that triggered the click
 			// can be different from the target of the click event synthesized
 			// by the browser. The target of a mouse/click event that is synthesized
 			// from a touch event seems to be implementation specific. For example,
@@ -3877,7 +3877,7 @@ if ( eventCaptureSupported ) {
 				function clearTapHandlers() {
 					clearTapTimer();
 
-					$this.unbind( "vclick", clickHandler )
+					$this.unbind( "click", clickHandler )
 						.unbind( "vmouseup", clearTapTimer );
 					$document.unbind( "vmousecancel", clearTapHandlers );
 				}
@@ -3895,7 +3895,7 @@ if ( eventCaptureSupported ) {
 				}
 
 				$this.bind( "vmouseup", clearTapTimer )
-					.bind( "vclick", clickHandler );
+					.bind( "click", clickHandler );
 				$document.bind( "vmousecancel", clearTapHandlers );
 
 				timer = setTimeout( function() {
@@ -3907,7 +3907,7 @@ if ( eventCaptureSupported ) {
 			});
 		},
 		teardown: function() {
-			$( this ).unbind( "vmousedown" ).unbind( "vclick" ).unbind( "vmouseup" );
+			$( this ).unbind( "vmousedown" ).unbind( "click" ).unbind( "vmouseup" );
 			$document.unbind( "vmousecancel" );
 		}
 	};
@@ -5720,8 +5720,8 @@ $.widget( "mobile.page", {
 
 		documentUrl = $.mobile.path.documentUrl,
 
-		// used to track last vclicked element to make sure its value is added to form data
-		$lastVClicked = null;
+		// used to track last clicked element to make sure its value is added to form data
+		$lastclicked = null;
 
 	/* Event Bindings - hashchange, submit, and click */
 	function findClosestLink( ele )	{
@@ -5827,7 +5827,7 @@ $.widget( "mobile.page", {
 
 	$.mobile._registerInternalEvents = function() {
 		var getAjaxFormData = function( $form, calculateOnly ) {
-			var url, ret = true, formData, vclickedName, method;
+			var url, ret = true, formData, clickedName, method;
 			if ( !$.mobile.ajaxEnabled ||
 					// test that the form is, itself, ajax false
 					$form.is( ":jqmData(ajax='false')" ) ||
@@ -5838,7 +5838,7 @@ $.widget( "mobile.page", {
 				return false;
 			}
 
-			url = ( $lastVClicked && $lastVClicked.attr( "formaction" ) ) ||
+			url = ( $lastclicked && $lastclicked.attr( "formaction" ) ) ||
 				$form.attr( "action" );
 			method = ( $form.attr( "method" ) || "get" ).toLowerCase();
 
@@ -5875,19 +5875,19 @@ $.widget( "mobile.page", {
 			if ( !calculateOnly ) {
 				formData = $form.serializeArray();
 
-				if ( $lastVClicked && $lastVClicked[ 0 ].form === $form[ 0 ] ) {
-					vclickedName = $lastVClicked.attr( "name" );
-					if ( vclickedName ) {
+				if ( $lastclicked && $lastclicked[ 0 ].form === $form[ 0 ] ) {
+					clickedName = $lastclicked.attr( "name" );
+					if ( clickedName ) {
 						// Make sure the last clicked element is included in the form
 						$.each( formData, function( key, value ) {
-							if ( value.name === vclickedName ) {
-								// Unset vclickedName - we've found it in the serialized data already
-								vclickedName = "";
+							if ( value.name === clickedName ) {
+								// Unset clickedName - we've found it in the serialized data already
+								clickedName = "";
 								return false;
 							}
 						});
-						if ( vclickedName ) {
-							formData.push( { name: vclickedName, value: $lastVClicked.attr( "value" ) } );
+						if ( clickedName ) {
+							formData.push( { name: clickedName, value: $lastclicked.attr( "value" ) } );
 						}
 					}
 				}
@@ -5920,8 +5920,8 @@ $.widget( "mobile.page", {
 			}
 		});
 
-		//add active state on vclick
-		$.mobile.document.bind( "vclick", function( event ) {
+		//add active state on click
+		$.mobile.document.bind( "click", function( event ) {
 			var $btn, btnEls, target = event.target, needClosest = false;
 			// if this isn't a left click we don't care. Its important to note
 			// that when the virtual event is generated it will create the which attr
@@ -5931,7 +5931,7 @@ $.widget( "mobile.page", {
 
 			// Record that this element was clicked, in case we need it for correct
 			// form submission during the "submit" handler above
-			$lastVClicked = $( target );
+			$lastclicked = $( target );
 
 			// Try to find a target element to which the active class will be applied
 			if ( $.data( target, "mobile-button" ) ) {
@@ -6009,7 +6009,7 @@ $.widget( "mobile.page", {
 				useDefaultUrlHandling, isExternal,
 				transition, reverse, role;
 
-			// If a button was clicked, clean up the active class added by vclick above
+			// If a button was clicked, clean up the active class added by click above
 			if ( $.mobile.activeClickedLink &&
 				$.mobile.activeClickedLink[ 0 ] === event.target.parentNode ) {
 				httpCleanup();
@@ -6663,9 +6663,9 @@ $.widget( "mobile.dialog", {
 	//   opened with unless a data-transition is specified on the link/form
 	// - if the click was on the close button, or the link has a data-rel="back"
 	//   it'll go back in history naturally
-	_handleVClickSubmit: function( event ) {
+	_handleclickSubmit: function( event ) {
 		var attrs,
-			$target = $( event.target ).closest( event.type === "vclick" ? "a" : "form" );
+			$target = $( event.target ).closest( event.type === "click" ? "a" : "form" );
 
 		if ( $target.length && !$target.jqmData( "transition" ) ) {
 			attrs = {};
@@ -6698,8 +6698,8 @@ $.widget( "mobile.dialog", {
 		});
 
 		this._on( elem, {
-			vclick: "_handleVClickSubmit",
-			submit: "_handleVClickSubmit",
+			click: "_handleclickSubmit",
+			submit: "_handleclickSubmit",
 			pagebeforeshow: "_handlePageBeforeShow",
 			pagebeforehide: "_handlePageBeforeHide"
 		});
@@ -7391,7 +7391,7 @@ $.widget( "mobile.navbar", {
 				$( this ).addClass( classes );
 			});
 
-		$navbar.delegate( "a", "vclick", function( /* event */ ) {
+		$navbar.delegate( "a", "click", function( /* event */ ) {
 			var activeBtn = $( this );
 
 			if ( !( activeBtn.hasClass( "ui-state-disabled" ) ||
@@ -7806,12 +7806,12 @@ $.widget( "mobile.checkboxradio", $.extend( {
 
 		this._on( label.element, {
 			vmouseover: "_handleLabelVMouseOver",
-			vclick: "_handleLabelVClick"
+			click: "_handleLabelclick"
 		});
 
 		this._on( input, {
 			vmousedown: "_cacheVals",
-			vclick: "_handleInputVClick",
+			click: "_handleInputclick",
 			focus: "_handleInputFocus",
 			blur: "_handleInputBlur"
 		});
@@ -7882,7 +7882,7 @@ $.widget( "mobile.checkboxradio", $.extend( {
 		this.label.removeClass( $.mobile.focusClass );
 	},
 
-	_handleInputVClick: function() {
+	_handleInputclick: function() {
 		// Adds checked attribute to checked input when keyboard is used
 		this.element.prop( "checked", this.element.is( ":checked" ) );
 		this._getInputSet().not( this.element ).prop( "checked", false );
@@ -7895,7 +7895,7 @@ $.widget( "mobile.checkboxradio", $.extend( {
 		}
 	},
 
-	_handleLabelVClick: function( event ) {
+	_handleLabelclick: function( event ) {
 		var input = this.element;
 
 		if ( input.is( ":disabled" ) ) {
@@ -8594,7 +8594,7 @@ $.widget( "mobile.slider", $.extend( {
 		});
 
 		slider.bind( "vmousedown", $.proxy( this._sliderVMouseDown, this ) )
-			.bind( "vclick", false );
+			.bind( "click", false );
 
 		// We have to instantiate a new function object for the unbind to work properly
 		// since the method itself is defined in the prototype (causing it to unbind everything)
@@ -8617,7 +8617,7 @@ $.widget( "mobile.slider", $.extend( {
 			"keyup": "_handleKeyup"
 		});
 
-		this.handle.bind( "vclick", false );
+		this.handle.bind( "click", false );
 
 		this._handleFormReset();
 
@@ -10327,7 +10327,7 @@ $.widget( "mobile.popup", {
 			._ui.focusElement = this._ui.container;
 
 		// Event handlers
-		this._on( this._ui.screen, { "vclick": "_eatEventAndClose" } );
+		this._on( this._ui.screen, { "click": "_eatEventAndClose" } );
 		this._on( this.window, {
 			orientationchange: $.proxy( this, "_handleWindowOrientationchange" ),
 			resize: $.proxy( this, "_handleWindowResize" ),
@@ -11213,15 +11213,15 @@ $.widget( "mobile.selectmenu", $.mobile.selectmenu, {
 
 	_handleKeydown: function( event ) {
 		this._super( event );
-		this._handleButtonVclickKeydown( event );
+		this._handleButtonclickKeydown( event );
 	},
 
-	_handleButtonVclickKeydown: function( event ) {
+	_handleButtonclickKeydown: function( event ) {
 		if ( this.options.disabled || this.isOpen || this.options.nativeMenu ) {
 			return;
 		}
 
-		if (event.type === "vclick" ||
+		if (event.type === "click" ||
 				event.keyCode && (event.keyCode === $.mobile.keyCode.ENTER || event.keyCode === $.mobile.keyCode.SPACE)) {
 
 			this._decideFormat();
@@ -11414,7 +11414,7 @@ $.widget( "mobile.selectmenu", $.mobile.selectmenu, {
 
 		// Button events
 		this._on( this.button, {
-			vclick: "_handleButtonVclickKeydown"
+			click: "_handleButtonclickKeydown"
 		});
 
 		// Events for list items
@@ -12557,7 +12557,7 @@ $.widget( "mobile.controlgroup", $.extend( {
 
 			// tap toggle
 			page
-				.bind( "vclick", function( e ) {
+				.bind( "click", function( e ) {
 					if ( o.tapToggle && !$( e.target ).closest( o.tapToggleBlacklist ).length ) {
 						self.toggle();
 					}
@@ -15315,7 +15315,7 @@ $.widget( "ui.tabs", {
 
 			// DEPRECATED as of 1.4.0 - remove ui-disabled after 1.4.0 release
 			// only ui-state-disabled should be present thereafter
-			$.mobile.document.delegate( ".ui-state-disabled,.ui-disabled", "vclick",
+			$.mobile.document.delegate( ".ui-state-disabled,.ui-disabled", "click",
 				function( e ) {
 					e.preventDefault();
 					e.stopImmediatePropagation();

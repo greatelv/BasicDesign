@@ -5,14 +5,13 @@ var page = (function(){
 	}
 	
 	var bindHandler = function(){
-		$('#upload').on('vclick', function(){
+		$('#upload').on('click', function(){
 			location.href="share/share_upload.html";
 		});
 	};
 
 	var initPage = function(){
-		//ActivityIndicator.show();
-		console.log('eigjwiog');
+		/*ActivityIndicator.show();*/
 		$.ajax({
 	        url : $HOST,
 	        type: "GET",

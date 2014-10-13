@@ -25,7 +25,7 @@ var page = (function(){
 
 	
 	var bindHandler = function(){
-		pcl.eraser.on('vclick', function(){
+		pcl.eraser.on('click', function(){
 			skts.sketch().action = null;
 			skts.sketch().actions = [];
 			var canvs = $('#paper')[0]
@@ -34,7 +34,7 @@ var page = (function(){
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
    		});
 
-		pcl.sidebar.find('.arrow-btn').on('vclick', function(){
+		pcl.sidebar.find('.arrow-btn').on('click', function(){
 			if(pcl.sidebar.hasClass('open')){
 				pcl.sidebar.removeClass('open');
 				$('#layer').hide();	
@@ -44,12 +44,12 @@ var page = (function(){
 			}
 		});
 
-		pcl.sidebar.find('.others').on('vclick', function(){
-			pcl.sidebar.find('.arrow-btn').trigger('vclick');
+		pcl.sidebar.find('.others').on('click', function(){
+			pcl.sidebar.find('.arrow-btn').trigger('click');
 			chagePic();
 		});
 
-		pcl.sidebar.find('.answer').on('vclick', function(){
+		pcl.sidebar.find('.answer').on('click', function(){
 			location.replace("pcl_practice_result.html?pcl="+pclId+"&picIdx="+picIdx);
 		});
 	};
@@ -65,7 +65,7 @@ var page = (function(){
 	}
 
 	var chagePic = function(){
-		pcl.eraser.trigger('vclick');
+		pcl.eraser.trigger('click');
 		picIdx = _.sample(_.without(pic[pclId], picIdx)) ;
 		pcl.canvas.css('background-image', 'url(../../img/pcl/pcl_practice/'+pclId+'/'+picIdx+'.png)');
 	}

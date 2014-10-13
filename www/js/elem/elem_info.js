@@ -12,7 +12,7 @@ var page = (function(){
 	var elemId = null;
 	
 	var bindHandler = function(){
-		elem.next.on('vclick', function(){
+		elem.next.on('click', function(){
 			 location.replace("elem_practice.html?elem="+elemId);
 		})
 	};
