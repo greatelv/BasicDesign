@@ -18,31 +18,14 @@ var page = (function(){
 				    '확인'                  // buttonName
 				);
 			}else{
-				ActivityIndicator.show()
+				
 				var formData = new FormData($('form')[0]);
 
-				$.ajax({
-			        url : $HOST,
-			        type: "POST",
-			        data : formData,
-			        cache: false,
-        			dataType: 'json',
-        			processData: false, // Don't process the files
-        			contentType: false, // Set content type to false as jQuery will tell the server its a query string request
-			        success:function(data, textStatus, jqXHR) 
-			        {
-			         	module.alert('사진이 정상적으로 공유되었습니다.', function(){
-			         		location.replace('../share.html');
-			         	});  
-			        },
-			        error: function(jqXHR, textStatus, errorThrown) 
-			        {
-			            module.alert('사진을 업로드하지 못했습니다.', function(){});     
-			        },
-			        complete: function(){
-			        	ActivityIndicator.hide();
-			        }
-			    });
+				module.request($HOST+'photo', 'POST', formData, function(){
+					module.alert('사진이 정상적으로 공유되었습니다.', function(){
+		         		location.replace('../share.html');
+		         	});  
+				})
 			}
 		});
 	};

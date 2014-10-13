@@ -1,17 +1,16 @@
-#page_share{}
-
-#page_share .header{
+.header{
     height: 30px;
 }
 
-#page_share h3{
+h3{
     display: inline-block;
     float: left;
     font-size: 1.6em;
     line-height: 30px;
+    text-indent: 2px;
 }
 
-#page_share #upload{
+.header > div{
     float: right;
     background-color: #ededed;  border-color: #ddd;  color: #333;  text-shadow: 0 1px 0 #f3f3f3;
     border-radius: .3125em;
@@ -21,7 +20,11 @@
     line-height: 30px;
     font-size: 1.2em;
     cursor: pointer;
+    margin-right: 2px;
 }
+
+
+#page_share{}
 
 #page_share .item-ctn{
     margin-top: 1.2em;
@@ -58,30 +61,7 @@
 /*사진 업로드 이미지*/
 #page_share_upload{}
 
-#page_share_upload .header{
-    height: 30px;
-}
 
-#page_share_upload h3{
-    display: inline-block;
-    float: left;
-    font-size: 1.6em;
-    line-height: 30px;
-    text-indent: 2px;
-}
-
-#page_share_upload #return{
-    float: right;
-    background-color: #ededed;  border-color: #ddd;  color: #333;  text-shadow: 0 1px 0 #f3f3f3;
-    border-radius: .3125em;
-    width: 8em;
-    height: 30px;
-    text-align: center;
-    line-height: 30px;
-    font-size: 1.2em;
-    cursor: pointer;
-    margin-right: 2px;
-}
 
 #page_share_upload form{
 }
@@ -138,4 +118,114 @@
     line-height: 40px;
     position: relative;
     top: 6em;
+}
+
+
+/*공유 상세*/
+
+#page_share_view{}
+
+#page_share_view .photo-view{
+    width: 100%;
+    height: 460px;
+    display: inline-block;
+    top: 0px;
+    margin-top: 1.2em;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+
+#page_share_view .photo-view .label{
+    position: relative;
+    
+    width: 100%;
+    height: 42px;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#page_share_view .photo-view .label > div{
+    display: inline-block;
+    
+    position: absolute;
+    color: #DDD;
+}
+
+#page_share_view .photo-view .label > .writer{
+    right: 0.8em;
+
+    top: 2em;
+}
+
+#page_share_view .photo-view .label > .desc{
+    top: 0.8em;
+
+    left: 0.8em;
+}
+
+#page_share_view .photo-view .label > .date{
+    right: 0.8em;
+
+    top: 0.8em;
+}
+
+#page_share_view > div > .comment{
+    margin-top: 1.2em;
+}
+
+#page_share_view .comment ul{
+    display: inline-block;
+    width: 100%;
+    margin-top: 1em;
+}
+
+#page_share_view .comment ul li{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.48em;
+    border-bottom: 1px solid #DDDDDD;
+    padding: 3px 0;
+}
+
+#page_share_view .comment ul li:last-child{
+    border-bottom: none;
+}
+
+#page_share_view .comment ul li .writer{
+    display: inline-block;
+    margin-left: 0.5em;
+    font-weight: bolder;
+}
+
+#page_share_view .comment ul li .date{
+    display: inline-block;
+    color: #fff;
+    margin-left: 2px;
+}
+
+#page_share_view .comment ul li .comment{
+    display: inline-block;
+    float: right;
+    width: 190px;
+    color: white;
+}
+
+#page_share_view .form{
+    display: block;
+}
+
+#page_share_view .form input{
+    float: left;
+    height: 30px;
+    width: 73%;
+    border-radius: .3125em;
+}
+
+#page_share_view .form .submit{
+    height: 30px;
+    line-height: 30px;
+    width: 25%;
+    float: right;
 }

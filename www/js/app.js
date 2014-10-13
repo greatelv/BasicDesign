@@ -57,7 +57,7 @@ var app = {
 	}
 };
 
-var $HOST = 'http://localhost:8080/rest/photo';
+var $HOST = 'http://localhost:8080/rest/';
 
 
 
@@ -69,5 +69,83 @@ var module = {
 		    '알림',            // title
 		    '확인'                  // buttonName
 		);
+	},
+	request : function(url, method, param, callback){
+		window.ActivityIndicator && ActivityIndicator.show();
+
+		$.ajax({
+	        url : url,
+	        type: method,
+	        data : param,
+	        cache: false,
+			dataType: 'json',
+			processData: false, // Don't process the files
+			contentType: false, // Set content type to false as jQuery will tell the server its a query string request
+	        success: function(data, textStatus, jqXHR){
+	        	callback && callback(data);
+	        },
+	        error: function(jqXHR, textStatus, errorThrown){
+	            module.alert('서버 요청중 문제가 발헁했습니다.', function(){});     
+	        },
+	        complete: function(){
+	        	window.ActivityIndicator && ActivityIndicator.hide();
+	        }
+    	});
 	}
 }
+
+
+
+
+
+
+
+// left: 37, up: 38, right: 39, down: 40,
+// spacebar: 32, pageup: 33, pagedown: 34, end: 35, home: 36
+var keys = [37, 38, 39, 40];
+
+function preventDefault(e) {
+  e = e || window.event;
+  if (e.preventDefault)
+      e.preventDefault();
+  e.returnValue = false;  
+}
+
+function keydown(e) {
+    for (var i = keys.length; i--;) {
+        if (e.keyCode === keys[i]) {
+            preventDefault(e);
+            return;
+        }
+    }
+}
+
+function wheel(e) {
+  preventDefault(e);
+}
+
+function disable_scroll() {
+  if (window.addEventListener) {
+      window.addEventListener('DOMMouseScroll', wheel, false);
+  }
+  window.onmousewheel = document.onmousewheel = wheel;
+  document.onkeydown = keydown;
+}
+
+function enable_scroll() {
+    if (window.removeEventListener) {
+        window.removeEventListener('DOMMouseScroll', wheel, false);
+    }
+    window.onmousewheel = document.onmousewheel = document.onkeydown = null;  
+}
+
+/**
+ * get QueryParam
+ */
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
