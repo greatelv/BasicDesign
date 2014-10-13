@@ -26,11 +26,10 @@ var page = (function(){
 	
 	var bindHandler = function(){
 		pcl.eraser.on('click', function(){
-			skts.sketch().action = null;
-			skts.sketch().actions = [];
 			var canvs = $('#paper')[0]
 			var canvO = canvs.getContext('2d');
-			
+			skts.sketch().action = null;
+			skts.sketch().actions = [];
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
    		});
 

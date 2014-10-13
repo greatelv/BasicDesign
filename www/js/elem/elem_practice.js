@@ -28,12 +28,11 @@ var page = (function(){
 	
 	var bindHandler = function(){
 		elem.eraser.on('click', function(){
+			var canvs = $('#paper')[0]
+			var canvO = canvs.getContext('2d');
 			skts.sketch().action = null;
 			skts.sketch().actions = [];
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
-			var canvs = $('#paper')[0]
-			var canvO = canvs.getContext('2d');
-			
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
    		});
 

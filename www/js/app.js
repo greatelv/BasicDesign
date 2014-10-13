@@ -57,7 +57,7 @@ var app = {
 	}
 };
 
-var $HOST = 'http://localhost:8080/rest/';
+var $HOST = 'http://ec2-54-64-252-231.ap-northeast-1.compute.amazonaws.com:8080/rest/';
 
 
 

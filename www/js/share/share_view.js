@@ -45,7 +45,7 @@ var page = (function(){
 	                    '<div class="comment">'+item.comment+'</div>'+
 	                '</li>';
 
-	            elem.comment.find('ul').append(itepm);
+	            elem.comment.find('ul').append(item);
 			})
 		});
 	}

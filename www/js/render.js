@@ -62,7 +62,9 @@ var page = (function(){
 			}, function(){
 				navigator.notification.alert(
 				    '사진을 가져오는데 실패했습니다.',  // message
-				    function(){},         // callback
+				    function(){
+				    	history.back();
+				    },         // callback
 				    '안내',            // title
 				    '확인'                  // buttonName
 				);
