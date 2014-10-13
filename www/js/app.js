@@ -53,7 +53,7 @@ var app = {
 	}
 };
 
-var $HOST = 'http://192.168.0.13:8080/rest/photo';
+var $HOST = 'http://localhost:8080/rest/photo';
 
 
 
