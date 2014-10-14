@@ -17,20 +17,16 @@ var page = (function(){
 
 	var initPage = function(){
 		$('#form_writer').val(window.device && window.device.model);
-
 		if(getParameterByName('file')){
+			
 			fileParam = 'file://'+getParameterByName('file');	
-			alert('fileParam : '+fileParam);
 			img = fileParam;
 			isGetPic = true;
 			fileName = getFileName(img);
-
-			alert('fileName : '+fileName);
 			
 			$('.file_name').text(fileName);
 			$('#form_desc').trigger('click');
 		}
-		
 	};
 
 	var bindHandler = function(){
@@ -86,7 +82,7 @@ var page = (function(){
 
 				var ft = new FileTransfer();
 				ft.upload(img, encodeURI($HOST+'photo'), function(r){
-					module.alert('사진이 정상적으로 공유되었습니다.', function(){
+					module.alert('사진이 정상적으로 공유되었습니다.', null, function(){
 		         		location.replace('../share.html');
 		         	}); 
 				}, function(e){}, options);
