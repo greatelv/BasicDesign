@@ -54,6 +54,8 @@ a, u {
     cursor: pointer;
 }
 
+.ellipsis { width: 150px; text-overflow: ellipsis; white-space: nowrap; overflow: hidden; }
+
 header{
     position: fixed;
   

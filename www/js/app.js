@@ -121,10 +121,11 @@ var module = {
 	        	window.ActivityIndicator && ActivityIndicator.hide();
 	        },
 	        error: function(jqXHR, textStatus, errorThrown){
+	        	window.ActivityIndicator && ActivityIndicator.hide();
 	            module.alert('서버 요청중 문제가 발헁했습니다.', null, function(){});     
 	        },
 	        complete: function(){
-	        	window.ActivityIndicator && ActivityIndicator.hide();
+	        	//window.ActivityIndicator && ActivityIndicator.hide();
 	        }
     	});
 	}

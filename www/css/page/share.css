@@ -194,9 +194,11 @@ h3{
     position: relative;
     display: inline-block;
     width: 100%;
+    /* height: 30px; */
     margin-bottom: 0.48em;
     border-bottom: 1px solid #DDDDDD;
     padding: 5px 0;
+    /* line-height: 47px; */
 }
 
 #page_share_view .comment ul li:last-child{
@@ -208,19 +210,33 @@ h3{
     margin-left: 0.8em;
     font-weight: bolder;
     color: #555;
+    width: 60px;
+    /* float: left; */
+    position: relative;
+    height: 100%;
 }
 
 #page_share_view .comment ul li .date{
     display: inline-block;
     color: #fff;
     margin-left: 2px;
+    height: 100%;
+    float: left;
 }
 
 #page_share_view .comment ul li .comment{
     display: inline-block;
     float: right;
-    width: 190px;
+    width: 180px;
     color: white;
+    height: 100%;
+    max-height: 90px;
+    /* line-height: 30px; */
+}
+
+#page_share_view .comment ul li > div{
+    line-height: 30px;
+	
 }
 
 #page_share_view .form{

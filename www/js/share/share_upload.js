@@ -62,7 +62,6 @@ var page = (function(){
 				    '확인'                  // buttonName
 				);
 			}else{
-				
 				/*var formData = new FormData($('form')[0]);
 
 				module.request($HOST+'photo', 'POST', formData, function(){

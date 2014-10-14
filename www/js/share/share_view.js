@@ -34,24 +34,31 @@ var page = (function(){
 			elem.photo.find('.date').text(res.regdate.substr(0, 10));
 			elem.photo.find('.writer').text(res.writer);
 			elem.photo.find('.desc').text(res.description);
+
+
+
+			module.request($HOST+'comment/photo/'+seq, 'GET', null, function(res){
+				$.each(res, function(idx, item){
+					var item = 
+						'<li seq="'+item.seq+'">'+
+		                    '<div class="date">'+item.regdate.substr(0, 10)+'</div>'+
+		                    '<div class="writer ellipsis">'+item.writer+'</div>'+
+		                    '<div class="comment">'+item.comment+'</div>'+
+		                '</li>';
+
+		            elem.comment.find('ul').append(item);
+
+		            
+				})
+			});
 		});
 
-		module.request($HOST+'comment/photo/'+seq, 'GET', null, function(res){
-			$.each(res, function(idx, item){
-				var item = 
-					'<li seq="'+item.seq+'">'+
-	                    '<div class="date">'+item.regdate.substr(0, 10)+'</div>'+
-	                    '<div class="writer">'+item.writer+'</div>'+
-	                    '<div class="comment">'+item.comment+'</div>'+
-	                '</li>';
+		
 
-	            elem.comment.find('ul').append(item);
+		//setTimeout(function(){
+		//	window.ActivityIndicator && ActivityIndicator.hide();
+		//}, 1500);
 
-	            if(idx == (res.length-1)){
-	            	window.ActivityIndicator && ActivityIndicator.hide();
-	            }
-			})
-		});
 	}
 	
 	return {
