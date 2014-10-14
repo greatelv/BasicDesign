@@ -5,9 +5,10 @@
 var page = (function(){
 	
 	var _this = $('#page_pcl_practice_result');
-	var	pcl = {
+	var	elem = {
 		canvas : $('#paper'),
-		sidebar: $('#sidebar')
+		sidebar: $('#sidebar'),
+		icns : $('#icn_ctn')
 	}
 
 	var pclId = null;
@@ -15,7 +16,10 @@ var page = (function(){
 
 	
 	var bindHandler = function(){
-		pcl.sidebar.find('.arrow-btn').on('click', function(){
+		elem.icns.find('.other').on('click', function(){
+			location.replace('pcl_practice.html?pcl='+pclId);
+		});
+		/*pcl.sidebar.find('.arrow-btn').on('click', function(){
 			if(pcl.sidebar.hasClass('open')){
 				pcl.sidebar.removeClass('open');
 				$('#layer').hide();	
@@ -32,7 +36,7 @@ var page = (function(){
 
 		pcl.sidebar.find('.return').on('click', function(){
 			location.replace('../pcl.html');
-		});
+		});*/
 	};
 
 	var initPage = function(){
@@ -41,7 +45,7 @@ var page = (function(){
 
 		_this.attr('pcl', pclId);
 
-		pcl.canvas.css('background-image', 'url(../../img/pcl/pcl_practice/answer/'+pclId+'/'+picIdx+'.png)');
+		elem.canvas.css('background-image', 'url(../../img/pcl/pcl_practice/answer/'+pclId+'/'+picIdx+'.png)');
 	}
 	
 	return {

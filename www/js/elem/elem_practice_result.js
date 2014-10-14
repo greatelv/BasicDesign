@@ -7,7 +7,8 @@ var page = (function(){
 	var _this = $('#page_elem_practice_result');
 	var	elem = {
 		canvas : $('#paper'),
-		sidebar: $('#sidebar')
+		sidebar: $('#sidebar'),
+		icns : $('#icn_ctn')
 	}
 
 	var elemId = null;
@@ -15,7 +16,10 @@ var page = (function(){
 
 	
 	var bindHandler = function(){
-		elem.sidebar.find('.arrow-btn').on('click', function(){
+		elem.icns.find('.other').on('click', function(){
+			location.replace('elem_practice.html?elem='+elemId);
+		});
+		/*elem.sidebar.find('.arrow-btn').on('click', function(){
 			if(elem.sidebar.hasClass('open')){
 				elem.sidebar.removeClass('open');
 				$('#layer').hide();	
@@ -23,16 +27,16 @@ var page = (function(){
 				elem.sidebar.addClass('open');
 				$('#layer').show();	
 			}
-		});
+		});*/
 
-		elem.sidebar.find('.others').on('click', function(){
+		/*elem.sidebar.find('.others').on('click', function(){
 			location.replace('elem_practice.html?elem='+elemId);
 			return false;
 		});
 
 		elem.sidebar.find('.return').on('click', function(){
 			location.replace('../elem.html');
-		});
+		});*/
 	};
 
 	var initPage = function(){

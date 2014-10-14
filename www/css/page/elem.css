@@ -183,7 +183,8 @@
     -moz-box-shadow: 0 0 5px #888;  -webkit-box-shadow: 0 0 5px#888;  box-shadow: 0 0px 7px #888;
 }
 
-#page_elem_practice #icn_ctn{
+#page_elem_practice #icn_ctn,
+#page_elem_practice_result #icn_ctn{
     bottom: 1em;
     right: 1em;
 }

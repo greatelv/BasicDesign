@@ -19,7 +19,7 @@ var page = (function(){
 		p1 : [1, 2],
 		p2 : [1, 2],
 		p3 : [1, 2],
-		p4 : [1]
+		p4 : [1, 2]
 	};
 
 	var picIdx = 1;
