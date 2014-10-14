@@ -9,6 +9,7 @@ var page = (function(){
 		canvas : $('#paper'),
 		eraser : $('#eraser > span'),
 		sidebar: $('#sidebar'),
+		icns : 	 $('#icn_ctn')
 	}
 
 	var elemId = null;
@@ -27,7 +28,7 @@ var page = (function(){
 
 	
 	var bindHandler = function(){
-		elem.eraser.on('click', function(){
+		elem.icns.find('.eraser').on('click', function(){
 			var canvs = $('#paper')[0]
 			var canvO = canvs.getContext('2d');
 			skts.sketch().action = null;
@@ -36,7 +37,7 @@ var page = (function(){
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
    		});
 
-		elem.sidebar.find('.arrow-btn').on('click', function(){
+		/*elem.sidebar.find('.arrow-btn').on('click', function(){
 			if(elem.sidebar.hasClass('open')){
 				elem.sidebar.removeClass('open');
 				$('#layer').hide();	
@@ -44,14 +45,16 @@ var page = (function(){
 				elem.sidebar.addClass('open');
 				$('#layer').show();	
 			}
-		});
+		});*/
+		
 
-		elem.sidebar.find('.others').on('click', function(){
-			elem.sidebar.find('.arrow-btn').trigger('click');
+		elem.icns.find('.other').on('click', function(){
+			/*elem.sidebar.find('.arrow-btn').trigger('click');*/
+			elem.icns.find('.eraser').trigger('click');
 			chagePic();
 		});
 
-		elem.sidebar.find('.answer').on('click', function(){
+		elem.icns.find('.answer').on('click', function(){
 			location.replace("elem_practice_result.html?elem="+elemId+"&picIdx="+picIdx);
 		});
 	};

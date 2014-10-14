@@ -168,6 +168,9 @@
 #page_elem_practice_result #canvas{
     position: relative;    
     top: 1.2em;
+    width: 285px;
+    height: 400px;
+    margin: 0 auto;
 }
 
 #page_elem_practice #canvas canvas,
@@ -178,6 +181,11 @@
     margin: 0 auto;
     background-size: contain;  background-repeat: no-repeat;  background-position: center;
     -moz-box-shadow: 0 0 5px #888;  -webkit-box-shadow: 0 0 5px#888;  box-shadow: 0 0px 7px #888;
+}
+
+#page_elem_practice #icn_ctn{
+    bottom: 1em;
+    right: 1em;
 }
 
 #page_elem_practice #canvas #eraser{

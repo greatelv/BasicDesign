@@ -5,10 +5,11 @@
 var page = (function(){
 	
 	var _this = $('#page_pcl_practice');
-	var	pcl = {
+	var	elem = {
 		canvas : $('#paper'),
 		eraser : $('#eraser > span'),
 		sidebar: $('#sidebar'),
+		icns : 	 $('#icn_ctn')
 	}
 
 	var pclId = null;
@@ -25,7 +26,7 @@ var page = (function(){
 
 	
 	var bindHandler = function(){
-		pcl.eraser.on('click', function(){
+		elem.icns.find('.eraser').on('click', function(){
 			var canvs = $('#paper')[0]
 			var canvO = canvs.getContext('2d');
 			skts.sketch().action = null;
@@ -33,22 +34,12 @@ var page = (function(){
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
    		});
 
-		pcl.sidebar.find('.arrow-btn').on('click', function(){
-			if(pcl.sidebar.hasClass('open')){
-				pcl.sidebar.removeClass('open');
-				$('#layer').hide();	
-			}else{
-				pcl.sidebar.addClass('open');
-				$('#layer').show();	
-			}
-		});
-
-		pcl.sidebar.find('.others').on('click', function(){
-			pcl.sidebar.find('.arrow-btn').trigger('click');
+		elem.icns.find('.other').on('click', function(){
+			elem.icns.find('.eraser').trigger('click');
 			chagePic();
 		});
 
-		pcl.sidebar.find('.answer').on('click', function(){
+		elem.icns.find('.answer').on('click', function(){
 			location.replace("pcl_practice_result.html?pcl="+pclId+"&picIdx="+picIdx);
 		});
 	};
@@ -59,14 +50,14 @@ var page = (function(){
 
 		//Pic(문제) 랜덤 추출
 		picIdx = _.sample(pic[pclId]);
-		pcl.canvas.css('background-image', 'url(../../img/pcl/pcl_practice/'+pclId+'/'+picIdx+'.png)');
-		skts = 	pcl.canvas.sketch();
+		elem.canvas.css('background-image', 'url(../../img/pcl/pcl_practice/'+pclId+'/'+picIdx+'.png)');
+		skts = 	elem.canvas.sketch();
 	}
 
 	var chagePic = function(){
-		pcl.eraser.trigger('click');
+		elem.eraser.trigger('click');
 		picIdx = _.sample(_.without(pic[pclId], picIdx)) ;
-		pcl.canvas.css('background-image', 'url(../../img/pcl/pcl_practice/'+pclId+'/'+picIdx+'.png)');
+		elem.canvas.css('background-image', 'url(../../img/pcl/pcl_practice/'+pclId+'/'+picIdx+'.png)');
 	}
 	
 	return {

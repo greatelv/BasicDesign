@@ -237,3 +237,32 @@ header.sub #header:before{
   from {-webkit-transform:scale(0.5) rotate(0deg);}
   to {-webkit-transform:scale(0.5) rotate(360deg);}
 } 
+
+
+#icn_ctn {
+    position: absolute;
+}
+
+#icn_ctn li{
+    float: left;
+    width: 2em;
+    height: 2em;
+    background-size: contain;
+    margin-left: 0.8em;
+    cursor: pointer;
+}
+
+#icn_ctn li.other{
+    background-image: url(../img/practice_icn/icn_other.png);}
+#icn_ctn li.eraser{
+    background-image: url(../img/practice_icn/icn_eraser.png)
+}
+#icn_ctn li.answer{
+    background-image: url(../img/practice_icn/icn_answer.png)
+}
+#icn_ctn li.share{
+    background-image: url(../img/practice_icn/icn_share.png)
+}
+#icn_ctn li.save{
+    background-image: url(../img/practice_icn/icn_save.png)
+}

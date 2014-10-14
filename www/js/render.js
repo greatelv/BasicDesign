@@ -9,6 +9,7 @@ var page = (function(){
 		canvas : $('#paper'),
 		eraser : $('#eraser > span'),
 		sidebar: $('#sidebar'),
+		icns : 	 $('#icn_ctn')
 	}
 
 	var img = null;
@@ -19,14 +20,14 @@ var page = (function(){
 	var canv = null;
 	
 	var bindHandler = function(){
-		elem.eraser.on('click', function(){
+		elem.icns.find('.eraser').on('click', function(){
 			skts.sketch().action = null;
 			skts.sketch().actions = [];
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
 			initCanvas();
    		});
 
-		elem.sidebar.find('.arrow-btn').on('click', function(){
+		/*elem.sidebar.find('.arrow-btn').on('click', function(){
 			if(elem.sidebar.hasClass('open')){
 				elem.sidebar.removeClass('open');
 				$('#layer').hide();	
@@ -34,13 +35,13 @@ var page = (function(){
 				elem.sidebar.addClass('open');
 				$('#layer').show();	
 			}
-		});
+		});*/
 
-		elem.sidebar.find('.save').on('click', function(){
+		elem.icns.find('.save').on('click', function(){
 			saveCanvas();
 		});
 
-		elem.sidebar.find('.share').on('click', function(){
+		elem.icns.find('.share').on('click', function(){
 			saveCanvas();
 			alert('공유 페이지로 이동');
 		});
@@ -53,7 +54,7 @@ var page = (function(){
 
 		var base_image = new Image();
 		
-		if(img){
+/*		if(img){
 			base_image.src = img;
 		}else{
 			navigator.camera.getPicture(function(imageData){
@@ -75,7 +76,7 @@ var page = (function(){
 				targetWidth: 570,
   				targetHeight: 800
 			});
-		}
+		}*/
 
 		base_image.onload = function(){
 			canvO.drawImage(this, 10, 10, 265, 380);	
