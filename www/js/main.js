@@ -46,7 +46,8 @@ var page = (function(){
 		    				encodingType: Camera.EncodingType.PNG,
 		    				saveToPhotoAlbum: true,
 		    				targetWidth: 570,
-		  					targetHeight: 800
+		  					targetHeight: 800,
+		  					correctOrientation : true
 						});
 					}		
 				});
@@ -59,6 +60,8 @@ var page = (function(){
 	return {
 		init : function(){
 			bindHandler();
+			/*module.alert(cordova.file.applicationStorageDirectory);
+			module.alert(JSON.stringify(cordova.file));*/
 		}	
 	}
 	

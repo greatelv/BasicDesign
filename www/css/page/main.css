@@ -1,7 +1,7 @@
 #page_main
 #page_main main{}
 #page_main #items{
-    width: 95%;
+    width: 90%;
     
         
     margin: 1em auto;
@@ -9,7 +9,7 @@
 #page_main #items .item{
     width: 100%;
     position: relative;
-    height: 70px;  
+    height: 80px;  
     background-repeat: no-repeat;  
     background-position: right;  
     background-size: contain;
@@ -40,8 +40,8 @@
 
 #page_main #items .item .icn{
     display: inline-block;
-    height: 70px;
-    width: 70px;
+    height: 80px;
+    width: 80px;
     background-size: contain;
     -webkit-flex: none;            
     flex: none;    

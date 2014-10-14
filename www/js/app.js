@@ -48,7 +48,7 @@ var app = {
 			})
 
 			$('#header .title').on('click', function(){
-				location.replace('/index.html');
+				location.replace('file:///android_asset/www/index.html');
 			});
 
 			$('body').addClass('loaded')
