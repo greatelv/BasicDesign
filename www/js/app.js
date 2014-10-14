@@ -84,6 +84,7 @@ var module = {
 			contentType: false, // Set content type to false as jQuery will tell the server its a query string request
 	        success: function(data, textStatus, jqXHR){
 	        	callback && callback(data);
+	        	window.ActivityIndicator && ActivityIndicator.hide();
 	        },
 	        error: function(jqXHR, textStatus, errorThrown){
 	            module.alert('서버 요청중 문제가 발헁했습니다.', function(){});     
@@ -149,4 +150,21 @@ function getParameterByName(name) {
         results = regex.exec(location.search);
     return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
 }
+
+$.fn.serializeObject = function()
+{
+    var o = {};
+    var a = this.serializeArray();
+    $.each(a, function() {
+        if (o[this.name] !== undefined) {
+            if (!o[this.name].push) {
+                o[this.name] = [o[this.name]];
+            }
+            o[this.name].push(this.value || '');
+        } else {
+            o[this.name] = this.value || '';
+        }
+    });
+    return o;
+};
 

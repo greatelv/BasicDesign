@@ -98,10 +98,20 @@ h3{
 
 #page_share_upload .form ul li .upload{
     display: inline-block;
-    width: 75%;
+    width: 7.5em;
     height: 30px;
     line-height: 0px;
     text-indent: 0px;
+    line-height: 30px;
+}
+
+#page_share_upload .form ul li span.file_name{
+	margin-right: 2em;
+	width: 10em;
+	height: 50px;
+	text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+	display: inline-block;
+	float: right;
 }
 
 #page_share_upload .form ul li .photo-info{

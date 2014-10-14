@@ -46,6 +46,10 @@ var page = (function(){
 	                '</li>';
 
 	            elem.comment.find('ul').append(item);
+
+	            if(idx == (res.length-1)){
+	            	window.ActivityIndicator && ActivityIndicator.hide();
+	            }
 			})
 		});
 	}

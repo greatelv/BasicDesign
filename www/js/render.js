@@ -42,19 +42,24 @@ var page = (function(){
 		});
 
 		elem.icns.find('.share').on('click', function(){
-			saveCanvas();
-			alert('공유 페이지로 이동');
+			window.canvas2ImagePlugin.saveImageDataToLibrary(
+		        function(path){
+		            location.replace('share/share_upload.html?file='+path);
+		        },
+		        function(err){
+		        	alert(err);
+		        },
+		        document.getElementById('paper')
+		    );
 		});
 	};
 
 	var initCanvas = function(){
-		canvO.fillStyle ="#ffffff";
-		canvO.fillRect(0, 0, canvs.width, canvs.height);
-
+		//canvO.fillStyle ="#ffffff";
+		//canvO.fillRect(0, 0, canvs.width, canvs.height);
 
 		var base_image = new Image();
-		
-/*		if(img){
+		if(img){
 			base_image.src = img;
 		}else{
 			navigator.camera.getPicture(function(imageData){
@@ -76,10 +81,10 @@ var page = (function(){
 				targetWidth: 570,
   				targetHeight: 800
 			});
-		}*/
+		}
 
 		base_image.onload = function(){
-			canvO.drawImage(this, 10, 10, 265, 380);	
+			canvO.drawImage(this, 0, 0, 285, 400);	
 		}
 		
 	}

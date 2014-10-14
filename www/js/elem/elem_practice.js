@@ -16,7 +16,7 @@ var page = (function(){
 	var skts = null;
 
 	var pic = {
-		e1 : [1, 2],
+		e1 : [1, 2, 3],
 		e2 : [1, 2],
 		e3 : [1, 2],
 		e4 : [1, 2],
