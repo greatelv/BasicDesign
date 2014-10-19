@@ -77,13 +77,13 @@ var app = {
 						break;
 					case 4 :
 						module.alert(
-							'1. 디자인 요소와 원리 내용 참고 \n'+
-							'1-1.기초디자인(김상구)  : 미진사\n'+
-							'1-2.중학교미술(연혜경 외 2인) : 천재교과서\n\n'+
+							'1. 요소와 원리 정보 참고 출처\n'+
+							'요소와 원리의 정보페이지의 경우 단행본 기초디자인(김상구/미진사)와 \n'+
+							'중학미술교과서(연혜경 외/천재교과서)의 내용을 참고하여 재구성 한 것입니다. \n\n'+
 							'2. 사진출처\n'+
-							'2-1. Twenty-First Century Design : CARLTON \n'+
-							'2-2. www.leklint.com\n'+
-							'2-3. 디자인의이해 : 서울특별시·서울특별시교육청\n', '정보');
+							'* 전통보자기: 디자인의 이해/서울특별시·서울특별시교육청\n'+
+							'* Tide(Stuart Haygarth): Twenty-First Century Design/CARLTON\n'+
+							'* LE KLINT 172B(Poul Christiansen): www.leklint.com', '정보');
 						break;		
 				}
 			});

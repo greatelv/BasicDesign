@@ -15,6 +15,18 @@
     src: local(※), url(../font/NotoSansKR-Regular.woff) format('woff');
 }
 
+@font-face {
+    font-family: "ntdl";
+    src: url(../font/NotoSansKR-DemiLight.woff);
+    src: local(※), url(../font/NotoSansKR-DemiLight.woff) format('woff');
+}
+
+@font-face {
+    font-family: "ntl";
+    src: url(../font/NotoSansKR-Light.woff);
+    src: local(※), url(../font/NotoSansKR-Light.woff) format('woff');
+}
+
 body{
     text-transform: none;
     font-family: "nbg";
@@ -76,20 +88,21 @@ header{
     content: '';
     position: absolute;
     width: 100%;
-    height: 50px;
+    height: 60px;
     background-color: #fff;
 }
 
 #header .title{
     background-image: url(../img/basic_design.png);
     background-size: contain;
+    background-position: center;
     position: relative;
     background-repeat: no-repeat;
-    width: 13.5em;
-    height: 24px;
     display: inline-block;
-    top: 1.2em;
     left: 1.2em;
+    cursor: pointer;
+    height: 100%;
+    width: 200px;
 }
 
 #header .menu-btn{
@@ -98,13 +111,13 @@ header{
     height: 25px;
     background: url(../img/header_menu.png) no-repeat;
     background-size: contain;
-    top: 1.2em;
+    top: 1.6em;
     right: 1.2em;
     cursor: pointer;
 }
 
 header #header{
-    height: 50px;
+    height: 60px;
 
     /* background-image: none; */
     background-color: #fff;
@@ -130,7 +143,7 @@ header.sub #header:before{
     max-width: 345px;
     left: 0px;
     right: 0px;
-    margin: 50px auto 0 auto;
+    margin: 60px auto 0 auto;
 }
 
 #dim{
@@ -184,7 +197,7 @@ header.sub #header:before{
     display: none;
     right: 1.2em;
     width: 16em;
-    top: 45px;
+    top: 50px;
     padding: 1em 0em;
     background: #fff;
     color: #757575;
@@ -250,21 +263,28 @@ header.sub #header:before{
     width: 2em;
     height: 2em;
     background-size: contain;
+    background-repeat: no-repeat;
     margin-left: 0.8em;
     cursor: pointer;
 }
 
 #icn_ctn li.other{
-    background-image: url(../img/practice_icn/icn_other.png);}
-#icn_ctn li.eraser{
-    background-image: url(../img/practice_icn/icn_eraser.png)
+    background-image: url(../img/practice_icn/icn_other.png);
 }
+#icn_ctn li.eraser{
+    background-image: url(../img/practice_icn/icn_eraser.png);
+}
+
+#icn_ctn li.eraser_old{
+    background-image: url(../img/practice_icn/icn_eraser_old.png);
+}
+
 #icn_ctn li.answer{
-    background-image: url(../img/practice_icn/icn_answer.png)
+    background-image: url(../img/practice_icn/icn_answer.png);
 }
 #icn_ctn li.share{
-    background-image: url(../img/practice_icn/icn_share.png)
+    background-image: url(../img/practice_icn/icn_share.png);
 }
 #icn_ctn li.save{
-    background-image: url(../img/practice_icn/icn_save.png)
+    background-image: url(../img/practice_icn/icn_save.png);
 }

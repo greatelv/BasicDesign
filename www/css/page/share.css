@@ -24,7 +24,9 @@ h3{
 }
 
 
-#page_share{}
+#page_share{
+    background-image: url(../../img/pcl/bg.png);
+}
 
 #page_share .item-ctn{
     margin-top: 1.2em;
@@ -47,7 +49,7 @@ h3{
     box-sizing: border-box;    
     -moz-box-sizing:border-box;    
     -webkit-box-sizing:border-box;            
-    /* border: 1px solid rgb(255, 255, 255); */
+    border: 1px solid transparent;
     cursor: pointer;
     /* margin: 2px; */
     text-align: center;
@@ -106,12 +108,12 @@ h3{
 }
 
 #page_share_upload .form ul li span.file_name{
-	margin-right: 2em;
-	width: 10em;
-	height: 50px;
-	text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
-	display: inline-block;
-	float: right;
+    margin-right: 2em;
+    width: 10em;
+    height: 50px;
+    text-overflow: ellipsis; white-space: nowrap; overflow: hidden;
+    display: inline-block;
+    float: right;
 }
 
 #page_share_upload .form ul li .photo-info{
@@ -236,7 +238,7 @@ h3{
 
 #page_share_view .comment ul li > div{
     line-height: 30px;
-	
+    
 }
 
 #page_share_view .form{

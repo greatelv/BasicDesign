@@ -27,22 +27,13 @@ var page = (function(){
 			initCanvas();
    		});
 
-		/*elem.sidebar.find('.arrow-btn').on('click', function(){
-			if(elem.sidebar.hasClass('open')){
-				elem.sidebar.removeClass('open');
-				$('#layer').hide();	
-			}else{
-				elem.sidebar.addClass('open');
-				$('#layer').show();	
-			}
-		});*/
-
+		
 		elem.icns.find('.save').on('click', function(){
 			saveCanvas();
 		});
 
 		elem.icns.find('.share').on('click', function(){
-			window.canvas2ImagePlugin.saveImageDataToLibrary(
+			window.canvas2ImagePlugin && window.canvas2ImagePlugin.saveImageDataToLibrary(
 		        function(path){
 		            location.replace('share/share_upload.html?file='+path);
 		        },
@@ -62,7 +53,7 @@ var page = (function(){
 		if(img){
 			base_image.src = img;
 		}else{
-			navigator.camera.getPicture(function(imageData){
+			window.navigator.camera && navigator.camera.getPicture(function(imageData){
 				img = imageData;
 				base_image.src = img;
 			}, function(){
@@ -98,7 +89,7 @@ var page = (function(){
 	};
 
 	var saveCanvas = function(){
-		window.canvas2ImagePlugin.saveImageDataToLibrary(
+		window.canvas2ImagePlugin && window.canvas2ImagePlugin.saveImageDataToLibrary(
 	        function(msg){
 	            navigator.notification.alert(
 				    '실습한 결과물이 갤러리에 저장되었습니다.'+msg,  // message

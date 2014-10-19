@@ -4,8 +4,8 @@
 
 #page_pcl .desc{
     position: relative;
-    height: 180px;
-    padding: 1.2em;
+    height: 18em;
+    top: 2.4em;
     background-image: url(../../img/pcl/desc.png);
     background-size: contain;
     background-repeat: no-repeat;
@@ -14,14 +14,14 @@
 
 #page_pcl .touch-guide{
     position: relative;  
-    height: 3em;    
-    top: 1.2em;  
+    height: 2em;    
+    top: 4.8em;  
     background-image: url(../../img/pcl/touch_guide.png);  background-size: contain;  background-repeat: no-repeat;  background-position: center;
 }
 
 #page_pcl #icns{
     position: relative;  
-    top: 1.2em;
+    top: 6.2em;
     width: 25em;
     left: 0px;
     right: 0px;
@@ -47,7 +47,7 @@
 
 #page_pcl_info .title{
     position: relative;
-    height: 90px;
+    height: 10em;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -63,7 +63,7 @@
 #page_pcl_info .pcl_desc{
     position: relative;  
     
-    height: 23em;    
+    height: 20em;    
     top: 1.2em;  
     background-size: contain;  
     background-repeat: no-repeat;  
