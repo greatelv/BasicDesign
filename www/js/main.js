@@ -47,7 +47,7 @@ var page = (function(){
 		    				saveToPhotoAlbum: true,
 		    				targetWidth: 570,
 		  					targetHeight: 800,
-		  					correctOrientation : true
+		  					correctOrientation : false
 						});
 					}		
 				});

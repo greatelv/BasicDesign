@@ -70,7 +70,8 @@ var page = (function(){
 				sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
 				destinationType: Camera.DestinationType.FILE_URI,
 				targetWidth: 570,
-  				targetHeight: 800
+  				targetHeight: 800,
+  				correctOrientation : false
 			});
 		}
 

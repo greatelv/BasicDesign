@@ -47,7 +47,8 @@ var page = (function(){
 				sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
 				destinationType: Camera.DestinationType.FILE_URI,
 				targetWidth: 570,
-  				targetHeight: 800
+  				targetHeight: 800,
+  				correctOrientation : false
 			
 			});
 		})
@@ -80,11 +81,14 @@ var page = (function(){
 				options.params = formData;
 
 				var ft = new FileTransfer();
-				ft.upload(img, encodeURI($HOST+'photo'), function(r){
+
+				ft.upload(img, encodeURI($HOST+'photo'), function(res){
+					var result = $.parseJSON(res.response);
 					module.alert('사진이 정상적으로 공유되었습니다.', null, function(){
-		         		location.replace('../share.html');
+		         		location.replace('share_view.html?seq='+result.seq);
 		         	}); 
 				}, function(e){}, options);
+
 			}
 		});
 	};
