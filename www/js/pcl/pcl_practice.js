@@ -26,7 +26,7 @@ var page = (function(){
 
 	
 	var bindHandler = function(){
-		elem.icns.find('.eraser').on('click', function(){
+		elem.icns.find('.eraser_old').on('click', function(){
 			var canvs = $('#paper')[0]
 			var canvO = canvs.getContext('2d');
 			skts.sketch().action = null;
@@ -35,7 +35,7 @@ var page = (function(){
    		});
 
 		elem.icns.find('.other').on('click', function(){
-			elem.icns.find('.eraser').trigger('click');
+			elem.icns.find('.eraser_old').trigger('click');
 			chagePic();
 		});
 
@@ -55,7 +55,7 @@ var page = (function(){
 	}
 
 	var chagePic = function(){
-		elem.eraser.trigger('click');
+		elem.icns.find('.eraser_old').trigger('click');
 		picIdx = _.sample(_.without(pic[pclId], picIdx)) ;
 		elem.canvas.css('background-image', 'url(../../img/pcl/pcl_practice/'+pclId+'/'+picIdx+'.png)');
 	}

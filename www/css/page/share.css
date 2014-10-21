@@ -138,7 +138,9 @@ h3{
 
 /*공유 상세*/
 
-#page_share_view{}
+#page_share_view{
+    background-image: url(../../img/pcl/bg.png);
+}
 
 #page_share_view .photo-view{
     width: 100%;
