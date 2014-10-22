@@ -9,7 +9,7 @@ var page = (function(){
 	
 	var bindHandler = function(){
 		$('#return').on('click', function(){
-			history.back();
+			location.replace('../share.html');
 		})
 
 		$('.submit').on('click', function(){
