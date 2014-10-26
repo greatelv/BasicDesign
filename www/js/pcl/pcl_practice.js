@@ -46,15 +46,13 @@ var page = (function(){
 
 	var initPage = function(){
 		pclId = getParameterByName('pcl');
-		picIdx = parseInt(getParameterByName('picIdx')); //From Practice Return Page
+		picIdx = getParameterByName('picIdx') ? parseInt(getParameterByName('picIdx')) : _.sample(pic[pclId]); //From Practice Return Page
 		fromResult = getParameterByName('fromResult'); //From Practice Return Page
 
 		_this.attr('pcl', pclId);
 
 		fromResult && chagePic();
 
-		//Pic(문제) 랜덤 추출
-		picIdx = _.sample(pic[pclId]);
 		elem.canvas.css('background-image', 'url(../../img/pcl/pcl_practice/'+pclId+'/'+picIdx+'.png)');
 		skts = 	elem.canvas.sketch();
 	}

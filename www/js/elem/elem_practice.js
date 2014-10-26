@@ -62,7 +62,7 @@ var page = (function(){
 
 	var initPage = function(){
 		elemId = getParameterByName('elem');
-		picIdx = parseInt(getParameterByName('picIdx')); //From Practice Return Page
+		picIdx = getParameterByName('picIdx') ? parseInt(getParameterByName('picIdx')) : 1; //From Practice Return Page
 		fromResult = getParameterByName('fromResult'); //From Practice Return Page
 
 		_this.attr('elem', elemId);
