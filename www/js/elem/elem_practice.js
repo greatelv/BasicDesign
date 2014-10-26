@@ -14,6 +14,7 @@ var page = (function(){
 
 	var elemId = null;
 	var skts = null;
+	var fromResult = false;
 
 	var pic = {
 		e1 : [1, 2, 3],
@@ -61,10 +62,13 @@ var page = (function(){
 
 	var initPage = function(){
 		elemId = getParameterByName('elem');
+		picIdx = parseInt(getParameterByName('picIdx')); //From Practice Return Page
+		fromResult = getParameterByName('fromResult'); //From Practice Return Page
+
 		_this.attr('elem', elemId);
 
-		//Pic(문제) 랜덤 추출
-		picIdx = _.sample(pic[elemId]);
+		fromResult && chagePic();
+
 		elem.canvas.css('background-image', 'url(../../img/elem/elem_practice/'+elemId+'/'+picIdx+'.png)');
 		skts = 	elem.canvas.sketch();
 	}

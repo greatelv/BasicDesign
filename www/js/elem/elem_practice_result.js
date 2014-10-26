@@ -17,7 +17,7 @@ var page = (function(){
 	
 	var bindHandler = function(){
 		elem.icns.find('.other').on('click', function(){
-			location.replace('elem_practice.html?elem='+elemId);
+			location.replace('elem_practice.html?elem='+elemId+'&picIdx='+picIdx+'&fromResult=true');
 		});
 		/*elem.sidebar.find('.arrow-btn').on('click', function(){
 			if(elem.sidebar.hasClass('open')){

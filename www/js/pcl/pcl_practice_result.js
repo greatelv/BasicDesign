@@ -17,7 +17,7 @@ var page = (function(){
 	
 	var bindHandler = function(){
 		elem.icns.find('.other').on('click', function(){
-			location.replace('pcl_practice.html?pcl='+pclId);
+			location.replace('pcl_practice.html?pcl='+pclId+'&picIdx='+picIdx+'&fromResult=true');
 		});
 		/*pcl.sidebar.find('.arrow-btn').on('click', function(){
 			if(pcl.sidebar.hasClass('open')){

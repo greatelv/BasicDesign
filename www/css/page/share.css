@@ -225,7 +225,7 @@ h3{
 
 #page_share_view .comment ul li .date{
     display: inline-block;
-    color: #fff;
+    color: #888;
     margin-left: 2px;
     height: 100%;
     float: left;
@@ -235,7 +235,7 @@ h3{
     display: inline-block;
     float: right;
     width: 180px;
-    color: white;
+    color: #888;
     height: 100%;
     max-height: 90px;
     /* line-height: 30px; */
@@ -255,6 +255,7 @@ h3{
     height: 30px;
     width: 73%;
     border-radius: .3125em;
+    border: 1px solid #C9C9C9;
 }
 
 #page_share_view .form .submit{
