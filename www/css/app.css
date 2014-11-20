@@ -288,3 +288,31 @@ header.sub #header:before{
 #icn_ctn li.save{
     background-image: url(../img/practice_icn/icn_save.png);
 }
+
+#color_ctn{
+    bottom: 10px;  
+    left: 10px;
+    position: absolute;
+}
+
+#color_ctn li {
+    position: relative;
+
+    width: 40px;
+    height: 25px;
+    float: left;
+    /* margin-right: 15px; */
+    cursor: pointer;
+}
+
+#color_ctn li.yellow{
+    background: #FFFD00;
+}
+
+#color_ctn li.blue{
+    background: #0E72A4;   
+}
+
+#color_ctn li.red{
+    background: #FC0404;
+}

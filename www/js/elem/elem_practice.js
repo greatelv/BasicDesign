@@ -9,7 +9,8 @@ var page = (function(){
 		canvas : $('#paper'),
 		eraser : $('#eraser > span'),
 		sidebar: $('#sidebar'),
-		icns : 	 $('#icn_ctn')
+		icns : 	 $('#icn_ctn'),
+		colors : $('#color_ctn')
 	}
 
 	var elemId = null;
@@ -38,17 +39,6 @@ var page = (function(){
 			canvO.clearRect(0, 0, canvs.width, canvs.height);
    		});
 
-		/*elem.sidebar.find('.arrow-btn').on('click', function(){
-			if(elem.sidebar.hasClass('open')){
-				elem.sidebar.removeClass('open');
-				$('#layer').hide();	
-			}else{
-				elem.sidebar.addClass('open');
-				$('#layer').show();	
-			}
-		});*/
-		
-
 		elem.icns.find('.other').on('click', function(){
 			/*elem.sidebar.find('.arrow-btn').trigger('click');*/
 			elem.icns.find('.eraser_old').trigger('click');
@@ -57,6 +47,10 @@ var page = (function(){
 
 		elem.icns.find('.answer').on('click', function(){
 			location.replace("elem_practice_result.html?elem="+elemId+"&picIdx="+picIdx);
+		});
+
+		elem.colors.children('li').on('click', function(){
+			var color = $(this).attr('class');
 		});
 	};
 
