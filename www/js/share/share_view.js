@@ -18,7 +18,7 @@ var page = (function(){
 				'writer' : window.device.model,
 				'comment' : elem.content.val()
 			}), function(){
-				location.reload();
+				window.location.href=window.location.href;
 			},{
 				'Content-Type': 'application/json',
 				'Accept': 'application/json'
