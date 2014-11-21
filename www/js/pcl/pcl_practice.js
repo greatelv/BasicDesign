@@ -9,7 +9,8 @@ var page = (function(){
 		canvas : $('#paper'),
 		eraser : $('#eraser > span'),
 		sidebar: $('#sidebar'),
-		icns : 	 $('#icn_ctn')
+		icns : 	 $('#icn_ctn'),
+		colors : $('#color_ctn')
 	}
 
 	var pclId = null;
@@ -41,6 +42,10 @@ var page = (function(){
 
 		elem.icns.find('.answer').on('click', function(){
 			location.replace("pcl_practice_result.html?pcl="+pclId+"&picIdx="+picIdx);
+		});
+
+		elem.colors.children('li').on('click', function(){
+			var color = $(this).attr('class');
 		});
 	};
 
