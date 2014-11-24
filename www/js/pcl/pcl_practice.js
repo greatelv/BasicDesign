@@ -53,9 +53,7 @@ var page = (function(){
 		pclId = getParameterByName('pcl');
 		picIdx = getParameterByName('picIdx') ? parseInt(getParameterByName('picIdx')) : _.sample(pic[pclId]); //From Practice Return Page
 		fromResult = getParameterByName('fromResult'); //From Practice Return Page
-
 		_this.attr('pcl', pclId);
-
 		fromResult && chagePic();
 
 		elem.canvas.css('background-image', 'url(../../img/pcl/pcl_practice/'+pclId+'/'+picIdx+'.png)');

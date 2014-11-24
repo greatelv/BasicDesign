@@ -18,6 +18,7 @@ var page = (function(){
 	var skts = null;
 	var canvO = null;
 	var canv = null;
+	var baseImage = null;
 	
 	var bindHandler = function(){
 		elem.icns.find('.eraser').on('click', function(){
@@ -48,14 +49,13 @@ var page = (function(){
 	var initCanvas = function(){
 		//canvO.fillStyle ="#ffffff";
 		//canvO.fillRect(0, 0, canvs.width, canvs.height);
-
-		var base_image = new Image();
+		baseImage = new Image();
 		if(img){
-			base_image.src = img;
+			baseImage.src = img;
 		}else{
 			window.navigator.camera && navigator.camera.getPicture(function(imageData){
 				img = imageData;
-				base_image.src = img;
+				baseImage.src = img;
 			}, function(){
 				navigator.notification.alert(
 				    '사진을 가져오는데 실패했습니다.',  // message
@@ -75,23 +75,29 @@ var page = (function(){
 			});
 		}
 
-		base_image.onload = function(){
+		//baseImage.src = 'http://cfs7.tistory.com/upload_control/download.blog?fhandle=YmxvZzgyMzM1QGZzNy50aXN0b3J5LmNvbTovYXR0YWNoLzAvMDYwMDAwMDAwMDAwLmpwZw%3D%3D';
+
+		console.log(baseImage.src);
+		
+		baseImage.onload = function(){
 			canvO.drawImage(this, 0, 0, 285, 400);	
-		}
+			skts = 	elem.canvas.sketch({
+				backgroundImage : baseImage.src//baseImage
+			});
+		};
 		
 	}
 
 	var initPage = function(){
 
 		img = getParameterByName('img');
-		skts = 	elem.canvas.sketch();
 		canvs = $('#paper')[0]
 		canvO = canvs.getContext('2d');
 	};
 
 	var saveCanvas = function(){
 		window.canvas2ImagePlugin && window.canvas2ImagePlugin.saveImageDataToLibrary(
-	        function(msg){
+			function(msg){
 	            navigator.notification.alert(
 				    '실습한 결과물이 갤러리에 저장되었습니다.'+msg,  // message
 				    function(){},         // callback

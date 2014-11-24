@@ -36,7 +36,8 @@ var __slice = Array.prototype.slice;
         toolLinks: true,
         defaultTool: 'marker',
         defaultColor: '#FFFD00',
-        defaultSize: 2
+        defaultSize: 3,
+        backgroundImage : null
       }, opts);
       this.painting = false;
       this.color = this.options.defaultColor;
@@ -44,6 +45,9 @@ var __slice = Array.prototype.slice;
       this.tool = this.options.defaultTool;
       this.actions = [];
       this.action = [];
+      this.backgroundImage = this.options.backgroundImage;
+      this.isRenderBg = false;
+      console.log(this.backgroundImage);
       this.canvas.bind('click mousedown mouseup mousemove mouseleave mouseout touchstart touchmove touchend touchcancel', this.onEvent);
       if (this.options.toolLinks) {
         $('body').delegate("a[href=\"#" + (this.canvas.attr('id')) + "\"]", 'click', function(e) {
@@ -106,9 +110,13 @@ var __slice = Array.prototype.slice;
     };
     Sketch.prototype.redraw = function() {
       var sketch;
+      var context = this.el.getContext('2d');
       this.el.width = this.canvas.width();
-      this.context = this.el.getContext('2d');
+      
+      var baseImage = new Image();
+      baseImage.src = this.backgroundImage;
       sketch = this;
+      context.drawImage(baseImage, 0, 0, 285, 400);
       $.each(this.actions, function() {
         if (this.tool) {
           return $.sketch.tools[this.tool].draw.call(sketch, this);
